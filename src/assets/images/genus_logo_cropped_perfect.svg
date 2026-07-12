@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    <linearGradient id="orange-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EA580C" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <clipPath id="round-rect">
+      <rect width="120" height="120" rx="26" ry="26" />
+    </clipPath>
+  </defs>
+  
+  <!-- Rounded Square Icon with diagonal bolt -->
+  <g clip-path="url(#round-rect)">
+    <!-- Left/Blue side -->
+    <rect width="120" height="120" fill="url(#blue-grad)" />
+    <!-- Right/Orange side -->
+    <polygon points="120,0 120,120 20,120 110,30" fill="url(#orange-grad)" />
+    <!-- White Lightning Bolt -->
+    <path d="M 100,0 L 25,75 H 65 L 35,120 L 110,45 H 70 Z" fill="#FFFFFF" />
+  </g>
+  
+  <!-- Text "Genus" -->
+  <text x="150" y="70" font-family="system-ui, -apple-system, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="68" font-weight="800" fill="#FFFFFF" letter-spacing="-1">Genus</text>
+  
+  <!-- Text "THE BATTERY EXPERT" -->
+  <text x="153" y="102" font-family="system-ui, -apple-system, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="500" fill="#FFFFFF" letter-spacing="6.5" opacity="0.95">THE BATTERY EXPERT</text>
+</svg>

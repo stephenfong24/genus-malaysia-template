@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Fix conflict between Tailwind and Bootstrap collapse class */
+.collapse {
+  visibility: visible !important;
+}

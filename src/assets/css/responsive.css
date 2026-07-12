@@ -1,0 +1,231 @@
+/* ==========================================================================
+   GENUS MALAYSIA SDN BHD - Responsive Adaptations
+   ========================================================================== */
+
+/* --- Large Desktop / Extra Large (1400px and up) --- */
+@media (min-width: 1400px) {
+    .hero-title {
+        font-size: 3.8rem;
+    }
+}
+
+/* --- Large Devices / Desktop (1200px and down) --- */
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 3.2rem;
+    }
+    
+    .hero-badges {
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* --- Medium-Large / Laptop (992px and down) --- */
+@media (max-width: 991.98px) {
+    .custom-navbar {
+        background: var(--color-primary) !important;
+        padding: 0.8rem 0;
+        box-shadow: var(--shadow-medium);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .navbar-collapse {
+        background: var(--color-primary);
+        padding: 1.5rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        margin-top: 0.8rem;
+    }
+    
+    .custom-navbar .nav-link {
+        padding: 0.75rem 1.25rem !important;
+        margin: 0.25rem 0;
+    }
+    
+    .navbar-cta {
+        margin-top: 1rem;
+        display: inline-block;
+        width: auto;
+        margin-left: 1.25rem;
+    }
+    
+    .hero-section {
+        padding: 140px 0 80px 0;
+        min-height: auto;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-badges {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        margin-bottom: 4rem;
+    }
+    
+    .hero-visual-container {
+        max-width: 440px;
+        margin: 0 auto;
+    }
+    
+    .stats-card-container {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 2.5rem;
+    }
+    
+    .stats-card:nth-child(2)::after {
+        display: none;
+    }
+    
+    .why-image-wrapper {
+        margin-bottom: 3rem;
+    }
+    
+    .timeline-line {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        justify-content: flex-start;
+        margin-bottom: 3rem;
+    }
+    
+    .timeline-badge {
+        left: 20px;
+        transform: translateX(-50%);
+    }
+    
+    .timeline-content {
+        width: calc(100% - 50px);
+        margin-left: 50px !important;
+        margin-right: 0 !important;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 50px !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* --- Small-Medium / Tablet (768px and down) --- */
+@media (max-width: 767.98px) {
+    .section-padding {
+        padding: 70px 0;
+    }
+    
+    .section-title-container {
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .floating-card-1 {
+        left: -2%;
+    }
+    
+    .floating-card-2 {
+        right: -2%;
+    }
+    
+    .contact-form-card {
+        padding: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* --- Mobile (576px and down) --- */
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-badges {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .stats-card-container {
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+    
+    .stats-card::after {
+        display: none !important;
+    }
+    
+    .brand-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .brand-logo-container {
+        width: 80px;
+        height: 40px;
+    }
+    
+    .floating-card {
+        display: none; /* Hide floating widgets on small mobile to avoid clutter */
+    }
+    
+    .floating-whatsapp {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.6rem;
+    }
+    
+    .scroll-to-top {
+        width: 44px;
+        height: 44px;
+        bottom: 20px;
+        left: 20px;
+        font-size: 1.1rem;
+    }
+}
+
+/* --- Small Mobile (380px and down) --- */
+@media (max-width: 379.98px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .navbar-cta {
+        margin-left: 0.75rem;
+        padding: 0.5rem 1rem !important;
+        font-size: 0.85rem;
+    }
+}

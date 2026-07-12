@@ -1,0 +1,6 @@
+{
+  "name": "Genus Malaysia",
+  "description": "Premium landing page for Genus Malaysia Sdn Bhd specializing in professional car battery delivery, replacement, and onsite emergency breakdown solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
