@@ -78,8 +78,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/check-maintenance" onClick={scrollToTop}>
-                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> Check Maintenance
+                <Link to="/check-warranty" onClick={scrollToTop}>
+                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> Check Warranty
                 </Link>
               </li>
             </ul>

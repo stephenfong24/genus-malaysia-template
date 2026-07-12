@@ -115,7 +115,7 @@ export default function Header() {
             <li className="nav-item ms-lg-3 mt-3 mt-lg-0">
               <Link 
                 className="btn btn-warning text-dark fw-bold rounded-pill px-4 d-inline-flex align-items-center" 
-                to="/check-maintenance" 
+                to="/check-warranty" 
                 onClick={closeMenu}
                 id="headerBtnMaintenance"
                 style={{ 
@@ -127,7 +127,7 @@ export default function Header() {
                   paddingBottom: '8px'
                 }}
               >
-                Check Maintenance
+                Check Warranty
               </Link>
             </li>
           </ul>

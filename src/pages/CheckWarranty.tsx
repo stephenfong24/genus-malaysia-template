@@ -1,11 +1,11 @@
-import { Activity, Search, ShieldCheck, HelpCircle } from 'lucide-react';
+import { CalendarCheck, Search, ShieldCheck, HelpCircle } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 
-export default function CheckMaintenance() {
+export default function CheckWarranty() {
   return (
     <PageTransition>
       <section 
-        id="check-maintenance" 
+        id="check-warranty" 
         className="maintenance-section section-padding d-flex align-items-center" 
         style={{ 
           paddingTop: '160px', 
@@ -16,7 +16,7 @@ export default function CheckMaintenance() {
       >
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-6 col-md-10 col-12 reveal-on-scroll revealed" id="maintenanceCardContainer">
+            <div className="col-xl-8 col-lg-9 col-md-10 col-12 reveal-on-scroll revealed" id="maintenanceCardContainer">
               <div 
                 className="coming-soon-card p-5 rounded-4 shadow-lg border border-1 text-center" 
                 style={{ 
@@ -37,7 +37,7 @@ export default function CheckMaintenance() {
                     boxShadow: '0 0 20px var(--color-accent-dim-strong)'
                   }}
                 >
-                  <Activity size={30} />
+                  <ShieldCheck size={30} />
                 </div>
 
                 <div className="mb-2">
@@ -51,16 +51,16 @@ export default function CheckMaintenance() {
                       border: '1px solid var(--color-accent-dim-strong)'
                     }}
                   >
-                    Feature Coming Soon
+                    Warranty Check Coming Soon
                   </span>
                 </div>
 
                 <h2 className="text-white fw-extrabold mb-3 font-sans tracking-tight" style={{ fontSize: '1.85rem' }}>
-                  Battery Maintenance & Warranty Tracker
+                  Check Battery Warranty
                 </h2>
                 
                 <p className="mb-4 font-sans px-2" style={{ color: 'var(--color-gray-300)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  A brand new way to monitor your vehicle's energy. Soon you will be able to input your Genus or K-Viron battery's unique factory serial number to verify active warranty coverage, check detailed maintenance logs, and review electrical health logs from our onsite diagnostics.
+                  Soon you will be able to verify your Genus or K-Viron battery warranty using the battery serial number or purchase details. Check whether your warranty is active, review the registered purchase date, and get clear next steps for support or replacement claims.
                 </p>
 
                 {/* Simulated Warranty Serial Search */}
@@ -72,7 +72,7 @@ export default function CheckMaintenance() {
                     <input 
                       type="text" 
                       className="form-control border-0" 
-                      placeholder="e.g. KV-991A-2026" 
+                      placeholder="Enter battery serial number" 
                       disabled 
                       style={{ 
                         backgroundColor: 'var(--color-secondary)', 
@@ -94,24 +94,31 @@ export default function CheckMaintenance() {
                         opacity: 0.8
                       }}
                     >
-                      Verify
+                      Check
                     </button>
                   </div>
                 </div>
 
-                <div className="row g-3 justify-content-center text-start mt-3 border-top border-secondary pt-4">
-                  <div className="col-sm-6 d-flex gap-2">
+                <div className="row row-cols-1 row-cols-md-3 g-3 text-start mt-3 border-top border-secondary pt-4">
+                  <div className="col d-flex gap-2">
                     <ShieldCheck size={18} style={{ color: 'var(--color-accent)' }} className="flex-shrink-0 mt-0.5" />
                     <div>
-                      <h6 className="text-white mb-0 font-sans small fw-bold">Active Registration</h6>
-                      <p className="small mb-0 font-sans" style={{ color: 'var(--color-gray-400)' }}>Self-register purchase slips directly</p>
+                      <h6 className="text-white mb-0 font-sans small fw-bold">Warranty Status</h6>
+                      <p className="small mb-0 font-sans" style={{ color: 'var(--color-gray-400)' }}>Confirm active battery coverage</p>
                     </div>
                   </div>
-                  <div className="col-sm-6 d-flex gap-2">
+                  <div className="col d-flex gap-2">
+                    <CalendarCheck size={18} style={{ color: 'var(--color-accent)' }} className="flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h6 className="text-white mb-0 font-sans small fw-bold">Purchase Record</h6>
+                      <p className="small mb-0 font-sans" style={{ color: 'var(--color-gray-400)' }}>View purchase and expiry dates</p>
+                    </div>
+                  </div>
+                  <div className="col d-flex gap-2">
                     <HelpCircle size={18} style={{ color: 'var(--color-accent)' }} className="flex-shrink-0 mt-0.5" />
                     <div>
-                      <h6 className="text-white mb-0 font-sans small fw-bold">Instant Diagnostics</h6>
-                      <p className="small mb-0 font-sans" style={{ color: 'var(--color-gray-400)' }}>Review starter & alternator outputs</p>
+                      <h6 className="text-white mb-0 font-sans small fw-bold">Claim Guidance</h6>
+                      <p className="small mb-0 font-sans" style={{ color: 'var(--color-gray-400)' }}>Know what to prepare for support</p>
                     </div>
                   </div>
                 </div>

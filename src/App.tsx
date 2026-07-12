@@ -11,7 +11,7 @@ import Brands from './pages/Brands';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
-import CheckMaintenance from './pages/CheckMaintenance';
+import CheckWarranty from './pages/CheckWarranty';
 
 export default function App() {
   return (
@@ -26,7 +26,7 @@ export default function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/check-maintenance" element={<CheckMaintenance />} />
+            <Route path="/check-warranty" element={<CheckWarranty />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>
