@@ -1,5 +1,4 @@
 import { 
-  Phone, 
   MessageCircle, 
   Mail, 
   MapPin, 
@@ -23,16 +22,6 @@ export default function Contact() {
                   </p>
                   
                   <ul className="contact-details-list" id="contactDetails">
-                    {/* Phone */}
-                    <li className="contact-detail-item">
-                      <div className="contact-detail-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Phone size={18} />
-                      </div>
-                      <div className="contact-detail-text">
-                        <h5>General Office Hotline</h5>
-                        <p>+603-8962 2111</p>
-                      </div>
-                    </li>
                     {/* WhatsApp */}
                     <li className="contact-detail-item">
                       <div 
