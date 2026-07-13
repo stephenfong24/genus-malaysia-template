@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import AnimatedCounter from '../components/AnimatedCounter';
+import { useLanguage } from '../i18n';
 
 // Images
 import avatarSuresh from '../assets/images/avatar_suresh_1783577525736.jpg';
@@ -32,32 +33,32 @@ const galleryItems = [
   {
     id: 1,
     img: galleryBmwTrunk,
-    title: "BMW Battery Replacement",
-    desc: "Delivering and preparing dual high-performance Genus batteries for onsite replacement on a BMW 3 Series."
+    title: "",
+    desc: ""
   },
   {
     id: 2,
     img: galleryBmwFront,
-    title: "Sleek Workshop Operations",
-    desc: "A premium BMW sedan in our workshop undergoing starter, alternator, and electrical system diagnostics."
+    title: "",
+    desc: ""
   },
   {
     id: 3,
     img: galleryTwoBatteries,
-    title: "Genus vs OEM Battery",
-    desc: "Comparing the premium calcium-silver Genus AGM battery side-by-side with the vehicle's factory battery."
+    title: "",
+    desc: ""
   },
   {
     id: 4,
     img: galleryBatteryInstalled,
-    title: "Clean Trunk Installation",
-    desc: "A fresh Genus G59220 AGM battery securely installed in the trunk compartment with professional cabling."
+    title: "",
+    desc: ""
   },
   {
     id: 5,
     img: galleryDeliveryVan,
-    title: "Daily Battery Deliveries",
-    desc: "Our delivery fleet stacked with fresh stocks of Genus and K-Viron car batteries ready to supply dealerships and workshops."
+    title: "",
+    desc: ""
   }
 ];
 
@@ -176,6 +177,32 @@ const steps = [
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const { t } = useLanguage();
+
+  const localizedTestimonials = testimonials.map((testimonial, index) => ({
+    ...testimonial,
+    name: t.home.testimonials[index][0],
+    location: t.home.testimonials[index][1],
+    text: t.home.testimonials[index][2],
+  }));
+
+  const localizedServices = servicesList.map((service, index) => ({
+    ...service,
+    title: t.home.services[index][0],
+    desc: t.home.services[index][1],
+  }));
+
+  const localizedSteps = steps.map((step, index) => ({
+    ...step,
+    title: t.home.steps[index][0],
+    desc: t.home.steps[index][1],
+  }));
+
+  const localizedGalleryItems = galleryItems.map((item, index) => ({
+    ...item,
+    title: t.home.gallery[index][0],
+    desc: t.home.gallery[index][1],
+  }));
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -193,29 +220,29 @@ export default function Home() {
             {/* Textual Content (Left) */}
             <div className="col-lg-6 reveal-on-scroll revealed">
               <h1 className="hero-title" id="heroMainTitle">
-                Trusted Car Battery<br /><span>Wholesaler & Experts</span>
+                {t.home.heroTitleTop}<br /><span>{t.home.heroTitleAccent}</span>
               </h1>
               <p className="hero-subtitle" id="heroSubtext">
-                We’re your trusted car battery experts — fast, reliable, and always ready to help. We specialise in high-performance Genus and K-viron car batteries, including calcium-silver technology & EFB Glass mat technology for longer-lasting durability.
+                {t.home.heroSubtitle}
               </p>
               
               {/* Trust Badges */}
               <div className="hero-badges" id="heroBadgeGrid">
                 <div className="hero-badge-item" id="badgeGenuine">
                   <BadgeCheck size={18} className="text-warning me-1" />
-                  <span>✓ Wholesaler Price</span>
+                  <span>{t.home.badges[0]}</span>
                 </div>
                 <div className="hero-badge-item" id="badgeResponse">
                   <Zap size={18} className="text-warning me-1" />
-                  <span>✓ Genus & K-Viron</span>
+                  <span>{t.home.badges[1]}</span>
                 </div>
                 <div className="hero-badge-item" id="badgeWarranty">
                   <ShieldCheck size={18} className="text-warning me-1" />
-                  <span>✓ Official Warranty</span>
+                  <span>{t.home.badges[2]}</span>
                 </div>
                 <div className="hero-badge-item" id="badgeTechnician">
                   <UserCheck size={18} className="text-warning me-1" />
-                  <span>✓ Certified Experts</span>
+                  <span>{t.home.badges[3]}</span>
                 </div>
               </div>
               
@@ -228,7 +255,7 @@ export default function Home() {
                   className="btn btn-premium-outline btn-ripple" 
                   id="heroWhatsappBtn"
                 >
-                  <MessageCircle size={18} className="text-success me-2" /> WhatsApp Now
+                  <MessageCircle size={18} className="text-success me-2" /> {t.home.whatsapp}
                 </a>
               </div>
             </div>
@@ -281,23 +308,23 @@ export default function Home() {
                   {/* Status Indicators */}
                   <rect x="255" y="215" width="105" height="36" rx="6" fill="var(--color-primary)" stroke="var(--color-accent-dim-strong)" strokeWidth="1" />
                   <circle cx="275" cy="233" r="5" fill="#10B981" />
-                  <text x="290" y="238" fill="#10B981" fontFamily="'Poppins', sans-serif" fontWeight="600" fontSize="11">HEALTHY</text>
+                  <text x="290" y="238" fill="#10B981" fontFamily="'Poppins', sans-serif" fontWeight="600" fontSize="11">{t.home.healthy}</text>
                 </svg>
                 
                 {/* Floating Widgets */}
                 <div className="floating-card floating-card-1" id="floatWidgetResponse" style={{ borderLeft: '4px solid var(--color-accent, #FBBF24)' }}>
                   <Package size={20} className="me-2" style={{ color: 'var(--color-accent, #FBBF24)' }} />
                   <div className="floating-card-text">
-                    <h5>Wholesale Supply</h5>
-                    <span>Trusted National Supplier</span>
+                    <h5>{t.home.wholesaleSupply}</h5>
+                    <span>{t.home.trustedSupplier}</span>
                   </div>
                 </div>
                 
                 <div className="floating-card floating-card-2" id="floatWidgetBrands" style={{ borderLeft: '4px solid var(--color-support, #2563EB)' }}>
                   <Cpu size={20} className="me-2" style={{ color: 'var(--color-support, #2563EB)' }} />
                   <div className="floating-card-text">
-                    <h5>Genus & K-Viron</h5>
-                    <span>Premium High-Performance</span>
+                    <h5>{t.home.genusKviron}</h5>
+                    <span>{t.home.premiumHighPerformance}</span>
                   </div>
                 </div>
               </div>
@@ -313,22 +340,22 @@ export default function Home() {
             {/* Stat Item 1 */}
             <div className="stats-card" id="statCustomers">
               <AnimatedCounter target={10000} suffix="+" />
-              <div className="stats-label">Batteries Distributed</div>
+              <div className="stats-label">{t.home.stats[0]}</div>
             </div>
             {/* Stat Item 2 */}
             <div className="stats-card" id="statExperience">
               <AnimatedCounter target={15} suffix="+" />
-              <div className="stats-label">Years Experience</div>
+              <div className="stats-label">{t.home.stats[1]}</div>
             </div>
             {/* Stat Item 3 */}
             <div className="stats-card" id="statResponse">
               <AnimatedCounter target={100} suffix="%" />
-              <div className="stats-label">Genuine Warranty</div>
+              <div className="stats-label">{t.home.stats[2]}</div>
             </div>
             {/* Stat Item 4 */}
             <div className="stats-card" id="statGenuine">
               <AnimatedCounter target={100} suffix="%" />
-              <div className="stats-label">Premium Standards</div>
+              <div className="stats-label">{t.home.stats[3]}</div>
             </div>
           </div>
         </div>
@@ -339,16 +366,16 @@ export default function Home() {
         <div className="container">
           {/* Title */}
           <div className="section-title-container text-center reveal-on-scroll revealed" id="servicesTitleWrap">
-            <span className="section-subtitle">What We Offer</span>
-            <h2 className="section-title" id="servicesHeader">Professional Automotive Battery Solutions</h2>
+            <span className="section-subtitle">{t.home.servicesSubtitle}</span>
+            <h2 className="section-title" id="servicesHeader">{t.home.servicesTitle}</h2>
             <p className="section-description mx-auto" id="servicesSubtext">
-              We provide a premium suite of car battery solutions to ensure your vehicles and dealership inventories remain powered with high-performance energy.
+              {t.home.servicesDesc}
             </p>
           </div>
           
           {/* Service Cards Grid */}
           <div className="row g-4" id="servicesGrid">
-            {servicesList.map((service) => (
+            {localizedServices.map((service) => (
               <div 
                 key={service.id} 
                 className="col-md-6 col-lg-4 reveal-on-scroll revealed" 
@@ -372,10 +399,10 @@ export default function Home() {
         <div className="container">
           {/* Header */}
           <div className="section-title-container text-center reveal-on-scroll revealed" id="testimonialsTitleWrap">
-            <span className="section-subtitle" style={{ color: 'var(--color-accent, #FBBF24)' }}>Customer Stories</span>
-            <h2 className="section-title light" id="testimonialsHeader">What Malaysian Drivers Say</h2>
+            <span className="section-subtitle" style={{ color: 'var(--color-accent, #FBBF24)' }}>{t.home.testimonialsSubtitle}</span>
+            <h2 className="section-title light" id="testimonialsHeader">{t.home.testimonialsTitle}</h2>
             <p className="section-description mx-auto text-light opacity-75" id="testimonialsSubtext">
-              Read real, high-trust reviews from drivers and commercial workshops who have experienced our premium battery distribution and expert supply services.
+              {t.home.testimonialsDesc}
             </p>
           </div>
           
@@ -384,7 +411,7 @@ export default function Home() {
             <div className="carousel slide">
               {/* Carousel Indicators */}
               <div className="carousel-indicators carousel-indicators-custom">
-                {testimonials.map((_, index) => (
+                {localizedTestimonials.map((_, index) => (
                   <button 
                     key={index}
                     type="button" 
@@ -397,7 +424,7 @@ export default function Home() {
               
               {/* Slides content */}
               <div className="carousel-inner">
-                {testimonials.map((testimonial, index) => (
+                {localizedTestimonials.map((testimonial, index) => (
                   <div 
                     key={testimonial.id}
                     className={`carousel-item ${activeSlide === index ? 'active d-block' : 'd-none'}`}
@@ -435,10 +462,10 @@ export default function Home() {
         <div className="container">
           {/* Header */}
           <div className="section-title-container text-center reveal-on-scroll revealed" id="timelineTitleWrap">
-            <span className="section-subtitle">How It Works</span>
-            <h2 className="section-title" id="timelineHeader">Our Simple 5-Step Supply Process</h2>
+            <span className="section-subtitle">{t.home.timelineSubtitle}</span>
+            <h2 className="section-title" id="timelineHeader">{t.home.timelineTitle}</h2>
             <p className="section-description mx-auto" id="timelineSubtext">
-              Acquiring high-performance car batteries is straightforward. We make battery supply, delivery, and professional installation completely hassle-free.
+              {t.home.timelineDesc}
             </p>
           </div>
           
@@ -446,7 +473,7 @@ export default function Home() {
           <div className="timeline-wrapper" id="timelineContainer">
             <div className="timeline-line" style={{ backgroundColor: 'var(--color-accent-dim-strong, rgba(251, 191, 36, 0.2))' }}></div>
             
-            {steps.map((step) => (
+            {localizedSteps.map((step) => (
               <div 
                 key={step.num} 
                 className="timeline-item reveal-on-scroll revealed" 
@@ -480,16 +507,16 @@ export default function Home() {
         <div className="container">
           {/* Header */}
           <div className="section-title-container text-center reveal-on-scroll revealed mb-5" id="galleryTitleWrap">
-            <span className="section-subtitle" style={{ color: 'var(--color-accent, #FBBF24)' }}>Work Gallery</span>
-            <h2 className="section-title text-white" id="galleryHeader">Onsite Operations & Distributions</h2>
+            <span className="section-subtitle" style={{ color: 'var(--color-accent, #FBBF24)' }}>{t.home.gallerySubtitle}</span>
+            <h2 className="section-title text-white" id="galleryHeader">{t.home.galleryTitle}</h2>
             <p className="section-description mx-auto text-gray-300 opacity-80" id="gallerySubtext" style={{ maxWidth: '650px' }}>
-              Take an inside look at our daily operations, professional automotive battery diagnostics, expert onsite installations, and premium inventory distribution.
+              {t.home.galleryDesc}
             </p>
           </div>
 
           {/* Masonry Columns Grid */}
           <div className="gallery-masonry-container" id="galleryMasonryContainer">
-            {galleryItems.map((item) => (
+            {localizedGalleryItems.map((item) => (
               <div 
                 key={item.id} 
                 className="gallery-masonry-card mb-4 overflow-hidden rounded-4 border border-1" 

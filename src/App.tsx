@@ -5,6 +5,7 @@ import ScrollToTop from './components/ScrollToTop';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ThemeSwitcher from './components/ThemeSwitcher';
 import SEO from './components/SEO';
+import { LanguageProvider } from './i18n';
 
 import Home from './pages/Home';
 import WhyUs from './pages/WhyUs';
@@ -16,29 +17,31 @@ import CheckWarranty from './pages/CheckWarranty';
 
 export default function App() {
   return (
-    <Router>
-      <div className="d-flex flex-column min-vh-100" style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-primary)' }}>
-        <SEO />
-        <Header />
-        <main className="flex-grow-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/why-us" element={<WhyUs />} />
-            <Route path="/brands" element={<Brands />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/check-warranty" element={<CheckWarranty />} />
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </main>
-        <Footer />
-        
-        {/* Floating Sticky Utilities */}
-        <FloatingWhatsApp />
-        <ScrollToTop />
-        <ThemeSwitcher />
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <div className="d-flex flex-column min-vh-100" style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-primary)' }}>
+          <SEO />
+          <Header />
+          <main className="flex-grow-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/why-us" element={<WhyUs />} />
+              <Route path="/brands" element={<Brands />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/check-warranty" element={<CheckWarranty />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </main>
+          <Footer />
+          
+          {/* Floating Sticky Utilities */}
+          <FloatingWhatsApp />
+          <ScrollToTop />
+          <ThemeSwitcher />
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 }

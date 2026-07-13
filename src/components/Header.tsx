@@ -1,11 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+import { Check, ChevronDown, Globe2 } from 'lucide-react';
 import logo from '../assets/images/genus_logo_cropped_perfect.svg';
+import { useLanguage, type Language } from '../i18n';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const languageRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
+  const languageOptions: { value: Language; label: string }[] = [
+    { value: 'en', label: 'English' },
+    { value: 'zh', label: '简体中文' },
+  ];
+  const currentLanguage = languageOptions.find((option) => option.value === language) ?? languageOptions[0];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,8 +32,36 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!languageRef.current?.contains(event.target as Node)) {
+        setIsLanguageOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsLanguageOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const handleLanguageChange = (nextLanguage: Language) => {
+    setLanguage(nextLanguage);
+    setIsLanguageOpen(false);
+  };
+
   const closeMenu = () => {
     setIsOpen(false);
+    setIsLanguageOpen(false);
     window.scrollTo({ top: 0, behavior: 'instant' as any });
   };
 
@@ -69,7 +107,7 @@ export default function Header() {
                 id="navLinkHome"
                 end
               >
-                Home
+                {t.nav.home}
               </NavLink>
             </li>
             <li className="nav-item">
@@ -79,7 +117,7 @@ export default function Header() {
                 onClick={closeMenu}
                 id="navLinkWhy"
               >
-                Why Us
+                {t.nav.whyUs}
               </NavLink>
             </li>
             <li className="nav-item">
@@ -89,7 +127,7 @@ export default function Header() {
                 onClick={closeMenu}
                 id="navLinkBrands"
               >
-                Brands
+                {t.nav.brands}
               </NavLink>
             </li>
             <li className="nav-item">
@@ -99,7 +137,7 @@ export default function Header() {
                 onClick={closeMenu}
                 id="navLinkFaq"
               >
-                FAQ
+                {t.nav.faq}
               </NavLink>
             </li>
             <li className="nav-item">
@@ -109,8 +147,40 @@ export default function Header() {
                 onClick={closeMenu}
                 id="navLinkContact"
               >
-                Contact
+                {t.nav.contact}
               </NavLink>
+            </li>
+            <li className="nav-item ms-lg-3 mt-3 mt-lg-0 d-none">
+              <div className="language-dropdown" ref={languageRef}>
+                <button
+                  id="languageSelect"
+                  className={`language-trigger ${isLanguageOpen ? 'active' : ''}`}
+                  type="button"
+                  onClick={() => setIsLanguageOpen((isOpen) => !isOpen)}
+                  aria-label={t.nav.language}
+                  aria-haspopup="menu"
+                  aria-expanded={isLanguageOpen}
+                >
+                  <Globe2 size={17} aria-hidden="true" />
+                  <span>{currentLanguage.label}</span>
+                  <ChevronDown size={15} className="language-chevron" aria-hidden="true" />
+                </button>
+                <div className={`language-menu ${isLanguageOpen ? 'show' : ''}`} role="menu" aria-label={t.nav.language}>
+                  {languageOptions.map((option) => (
+                    <button
+                      key={option.value}
+                      className={`language-option ${language === option.value ? 'selected' : ''}`}
+                      type="button"
+                      role="menuitemradio"
+                      aria-checked={language === option.value}
+                      onClick={() => handleLanguageChange(option.value)}
+                    >
+                      <span>{option.label}</span>
+                      {language === option.value && <Check size={15} aria-hidden="true" />}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </li>
             <li className="nav-item ms-lg-3 mt-3 mt-lg-0">
               <Link 
@@ -127,7 +197,7 @@ export default function Header() {
                   paddingBottom: '8px'
                 }}
               >
-                Check Warranty
+                {t.nav.checkWarranty}
               </Link>
             </li>
           </ul>

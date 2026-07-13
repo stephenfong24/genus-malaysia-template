@@ -1,60 +1,57 @@
 import React from 'react';
-import { 
-  Award, 
-  Gem, 
-  Shield, 
-  Settings, 
-  Zap, 
-  Star,
-  CheckCircle2
-} from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import genusBatteryMalaysiaImg from '../assets/images/genus_gs650_battery_uploaded_1783755776844.jpg';
+import { useLanguage } from '../i18n';
 
 interface Brand {
   id: string;
-  icon: React.ReactNode;
+  logoSrc: string;
+  logoClassName?: string;
   name: string;
   desc: string;
 }
 
 export default function Brands() {
+  const { t } = useLanguage();
+
   const brandsList: Brand[] = [
     {
       id: "brandGenus",
-      icon: <Award size={40} className="brand-icon-accent" />,
+      logoSrc: "/assets/brand/genus-logo.png",
       name: "Genus",
-      desc: "Calcium-Silver / EFB"
+      desc: t.brands.brandDescs[0]
     },
     {
       id: "brandKviron",
-      icon: <Gem size={40} className="brand-icon-accent" />,
+      logoSrc: "/assets/brand/k-viron-logo.jpg",
+      logoClassName: "brand-logo-image--kviron",
       name: "K-viron",
-      desc: "Premium Durability"
+      desc: t.brands.brandDescs[1]
     },
     {
       id: "brandAmaron",
-      icon: <Shield size={40} className="brand-icon-accent" />,
+      logoSrc: "/assets/brand/amaron-logo.jpg",
       name: "Amaron",
-      desc: "Long Life Battery"
+      desc: t.brands.brandDescs[2]
     },
     {
       id: "brandBosch",
-      icon: <Settings size={40} className="brand-icon-accent" />,
+      logoSrc: "/assets/brand/bosch-logo.svg",
       name: "Bosch",
-      desc: "German Technology"
+      desc: t.brands.brandDescs[3]
     },
     {
       id: "brandVarta",
-      icon: <Zap size={40} className="brand-icon-accent" />,
+      logoSrc: "/assets/brand/varta-logo.png",
       name: "Varta",
-      desc: "Premium European"
+      desc: t.brands.brandDescs[4]
     },
     {
       id: "brandCentury",
-      icon: <Star size={40} className="brand-icon-accent" />,
+      logoSrc: "/assets/brand/century-logo.webp",
       name: "Century",
-      desc: "Malaysian Pioneer"
+      desc: t.brands.brandDescs[5]
     }
   ];
 
@@ -64,10 +61,10 @@ export default function Brands() {
         <div className="container">
           {/* Header */}
           <div className="section-title-container text-center reveal-on-scroll revealed animate-fade-in" id="brandsTitleWrap">
-            <span className="section-subtitle">Premium Portfolios</span>
-            <h1 className="section-title" id="brandsHeader">Authorized Battery Brands</h1>
+            <span className="section-subtitle">{t.brands.subtitle}</span>
+            <h1 className="section-title" id="brandsHeader">{t.brands.title}</h1>
             <p className="section-description mx-auto" id="brandsSubtext">
-              We maintain robust inventory levels of high-performance car batteries specialising in Genus and K-viron brands alongside other global automotive brands.
+              {t.brands.desc}
             </p>
           </div>
           
@@ -81,7 +78,11 @@ export default function Brands() {
               >
                 <div className="brand-card">
                   <div className="brand-logo-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {brand.icon}
+                    <img
+                      src={brand.logoSrc}
+                      alt={`${brand.name} battery logo`}
+                      className={`brand-logo-image ${brand.logoClassName ?? ''}`.trim()}
+                    />
                   </div>
                   <h4>{brand.name}</h4>
                   <span>{brand.desc}</span>
@@ -118,18 +119,18 @@ export default function Brands() {
                   border: '1px solid var(--color-accent-dim-strong, rgba(251, 191, 36, 0.2))'
                 }}
               >
-                Featured Brand
+                {t.brands.featured}
               </span>
               <h2 className="fw-extrabold mb-4 font-sans tracking-tight text-white" style={{ fontSize: '2.5rem' }}>
-                Genus Batteries
+                {t.brands.genusTitle}
               </h2>
               
               <p className="mb-3 font-sans opacity-90" style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--color-gray-200)' }}>
-                Genus Battery in Malaysia (often distributed by Panna Group) is a rising brand known for high-performance automotive and industrial energy solutions. Featuring advanced Calcium-Silver technology, their batteries deliver strong, stable starting power and are designed to resist high temperatures and frequent stopping-and-starting.
+                {t.brands.paragraph1}
               </p>
               
               <p className="mb-4 font-sans opacity-90" style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--color-gray-200)' }}>
-                With a local hub located in Serdang, Selangor, Genus provides reliable, long-lasting power for everyday passenger cars (such as the Honda Jazz) as well as heavy-duty inverters and solar systems globally. Key features of their batteries include:
+                {t.brands.paragraph2}
               </p>
 
               {/* Key Features List */}
@@ -139,8 +140,8 @@ export default function Brands() {
                     <CheckCircle2 size={22} />
                   </div>
                   <div>
-                    <h5 className="fw-bold mb-1 text-white font-sans" style={{ fontSize: '1.1rem' }}>Calcium-Silver Technology</h5>
-                    <p className="mb-0 small opacity-80" style={{ color: 'var(--color-gray-300)' }}>Enhances cranking power and extends overall lifespan.</p>
+                    <h5 className="fw-bold mb-1 text-white font-sans" style={{ fontSize: '1.1rem' }}>{t.brands.features[0][0]}</h5>
+                    <p className="mb-0 small opacity-80" style={{ color: 'var(--color-gray-300)' }}>{t.brands.features[0][1]}</p>
                   </div>
                 </div>
 
@@ -149,8 +150,8 @@ export default function Brands() {
                     <CheckCircle2 size={22} />
                   </div>
                   <div>
-                    <h5 className="fw-bold mb-1 text-white font-sans" style={{ fontSize: '1.1rem' }}>High Heat Resistance & Anti-Vibration</h5>
-                    <p className="mb-0 small opacity-80" style={{ color: 'var(--color-gray-300)' }}>Built to withstand demanding tropical climates and rough road conditions.</p>
+                    <h5 className="fw-bold mb-1 text-white font-sans" style={{ fontSize: '1.1rem' }}>{t.brands.features[1][0]}</h5>
+                    <p className="mb-0 small opacity-80" style={{ color: 'var(--color-gray-300)' }}>{t.brands.features[1][1]}</p>
                   </div>
                 </div>
 
@@ -159,8 +160,8 @@ export default function Brands() {
                     <CheckCircle2 size={22} />
                   </div>
                   <div>
-                    <h5 className="fw-bold mb-1 text-white font-sans" style={{ fontSize: '1.1rem' }}>Low Maintenance & Fast Charging</h5>
-                    <p className="mb-0 small opacity-80" style={{ color: 'var(--color-gray-300)' }}>Engineered for convenience, deep discharge recovery, and rapid charge retention.</p>
+                    <h5 className="fw-bold mb-1 text-white font-sans" style={{ fontSize: '1.1rem' }}>{t.brands.features[2][0]}</h5>
+                    <p className="mb-0 small opacity-80" style={{ color: 'var(--color-gray-300)' }}>{t.brands.features[2][1]}</p>
                   </div>
                 </div>
               </div>

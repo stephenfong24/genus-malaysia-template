@@ -5,8 +5,11 @@ import {
   Clock 
 } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
+import { useLanguage } from '../i18n';
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <PageTransition>
       <section id="contact" className="contact-section section-padding" style={{ paddingTop: '140px', minHeight: '80vh' }}>
@@ -16,9 +19,9 @@ export default function Contact() {
             <div className="col-lg-6 col-md-12 reveal-on-scroll revealed" id="contactInfoColumn">
               <div className="contact-info-card d-flex flex-column justify-content-between h-100">
                 <div>
-                  <h1 className="contact-info-title">Headquarters Info</h1>
+                  <h1 className="contact-info-title">{t.contact.infoTitle}</h1>
                   <p className="text-muted mb-4">
-                    Have questions or looking to purchase high-performance batteries? Get in touch with our expert sales team during our business hours.
+                    {t.contact.infoDesc}
                   </p>
                   
                   <ul className="contact-details-list" id="contactDetails">
@@ -37,7 +40,7 @@ export default function Contact() {
                         <MessageCircle size={18} />
                       </div>
                       <div className="contact-detail-text">
-                        <h5>WhatsApp Support</h5>
+                        <h5>{t.contact.whatsappSupport}</h5>
                         <p>+60 16-262 7528</p>
                       </div>
                     </li>
@@ -47,7 +50,7 @@ export default function Contact() {
                         <Mail size={18} />
                       </div>
                       <div className="contact-detail-text">
-                        <h5>Corporate Email</h5>
+                        <h5>{t.contact.corporateEmail}</h5>
                         <p>genusmalaysia@gmail.com</p>
                       </div>
                     </li>
@@ -57,7 +60,7 @@ export default function Contact() {
                         <MapPin size={18} />
                       </div>
                       <div className="contact-detail-text">
-                        <h5>Corporate Office</h5>
+                        <h5>{t.contact.corporateOffice}</h5>
                         <p>Jalan Taming 5, Taman Taming Jaya, 43200 Balakong, Selangor, Malaysia</p>
                       </div>
                     </li>
@@ -67,10 +70,10 @@ export default function Contact() {
                         <Clock size={18} />
                       </div>
                       <div className="contact-detail-text">
-                        <h5>Business Hours</h5>
-                        <p className="mb-0">Mon – Fri: 9:00 AM – 6:00 PM</p>
-                        <p className="mb-0">Sat: 9:00 AM – 1:00 PM</p>
-                        <p className="mb-0">Sun: Closed</p>
+                        <h5>{t.contact.businessHours}</h5>
+                        <p className="mb-0">{t.contact.mondayFriday}</p>
+                        <p className="mb-0">{t.contact.saturday}</p>
+                        <p className="mb-0">{t.contact.sunday}</p>
                       </div>
                     </li>
                   </ul>
@@ -82,9 +85,9 @@ export default function Contact() {
             <div className="col-lg-6 col-md-12 reveal-on-scroll revealed stagger-1" id="contactMapColumn">
               <div className="contact-info-card d-flex flex-column justify-content-between h-100">
                 <div>
-                  <h3 className="contact-info-title">Headquarters Location</h3>
+                  <h3 className="contact-info-title">{t.contact.locationTitle}</h3>
                   <p className="text-muted mb-4">
-                    Our main warehouse and showroom is strategically situated in Balakong, allowing convenient distribution across Selangor and Kuala Lumpur.
+                    {t.contact.locationDesc}
                   </p>
                 </div>
                 <div 
@@ -116,7 +119,7 @@ export default function Contact() {
                     className="btn btn-outline-dark btn-ripple w-100 py-3 fw-semibold d-flex align-items-center justify-content-center gap-2"
                   >
                     <MapPin size={18} className="text-danger" />
-                    <span>Open in Google Maps App</span>
+                    <span>{t.contact.openMaps}</span>
                   </a>
                 </div>
               </div>

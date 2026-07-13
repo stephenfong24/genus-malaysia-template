@@ -1,7 +1,10 @@
 import { Lock, ArrowRight, Shield } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
+import { useLanguage } from '../i18n';
 
 export default function Login() {
+  const { t } = useLanguage();
+
   return (
     <PageTransition>
       <section 
@@ -51,22 +54,22 @@ export default function Login() {
                       border: '1px solid var(--color-accent-dim-strong)'
                     }}
                   >
-                    Coming Soon
+                    {t.login.badge}
                   </span>
                 </div>
 
                 <h1 className="text-white fw-extrabold mb-3 font-sans tracking-tight" style={{ fontSize: '1.85rem' }}>
-                  Dealer Portal Access
+                  {t.login.title}
                 </h1>
                 
                 <p className="mb-4 font-sans px-2" style={{ color: 'var(--color-gray-300)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  Our highly secure wholesale ordering system & dealer network portal is currently undergoing final beta tests and certification. 
+                  {t.login.desc}
                 </p>
 
                 {/* Mock Form Structure */}
                 <div className="text-start mb-4">
                   <div className="mb-3">
-                    <label className="form-label small fw-semibold font-sans mb-1" style={{ color: 'var(--color-gray-200)' }}>Dealer Code</label>
+                    <label className="form-label small fw-semibold font-sans mb-1" style={{ color: 'var(--color-gray-200)' }}>{t.login.dealerCode}</label>
                     <input 
                       type="text" 
                       className="form-control" 
@@ -81,7 +84,7 @@ export default function Login() {
                     />
                   </div>
                   <div className="mb-3">
-                    <label className="form-label small fw-semibold font-sans mb-1" style={{ color: 'var(--color-gray-200)' }}>Password</label>
+                    <label className="form-label small fw-semibold font-sans mb-1" style={{ color: 'var(--color-gray-200)' }}>{t.login.password}</label>
                     <input 
                       type="password" 
                       className="form-control" 
@@ -109,13 +112,13 @@ export default function Login() {
                     opacity: 0.8
                   }}
                 >
-                  <span>Portal Under Construction</span>
+                  <span>{t.login.button}</span>
                   <ArrowRight size={16} />
                 </button>
 
                 <div className="mt-4 pt-3 border-top border-secondary d-flex align-items-center justify-content-center gap-2 small" style={{ color: 'var(--color-gray-400)' }}>
                   <Shield size={14} style={{ color: 'var(--color-accent)' }} />
-                  <span>256-bit AES Encryption Confirmed</span>
+                  <span>{t.login.encryption}</span>
                 </div>
               </div>
             </div>

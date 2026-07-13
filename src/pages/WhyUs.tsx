@@ -1,8 +1,11 @@
 import { Users, Tag, Clock } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import whyUsImg from '../assets/images/roadside_assistance_malaysia_1783501379081.jpg';
+import { useLanguage } from '../i18n';
 
 export default function WhyUs() {
+  const { t } = useLanguage();
+
   return (
     <PageTransition>
       <section id="why-us" className="why-section section-padding" style={{ paddingTop: '140px', minHeight: '80vh' }}>
@@ -28,18 +31,18 @@ export default function WhyUs() {
                     backdropFilter: 'blur(8px)' 
                   }}
                 >
-                  <h4 style={{ color: 'var(--color-accent, #FBBF24)' }}>EXPERT</h4>
-                  <p>Wholesale Supplier</p>
+                  <h4 style={{ color: 'var(--color-accent, #FBBF24)' }}>{t.whyUs.badgeTitle}</h4>
+                  <p>{t.whyUs.badgeText}</p>
                 </div>
               </div>
             </div>
             
             {/* Right Content */}
             <div className="col-lg-6 col-md-12 ps-lg-5 mt-5 mt-lg-0 reveal-on-scroll revealed stagger-1" id="whyUsTextWrap">
-              <span className="section-subtitle">Our Advantage</span>
-              <h1 className="section-title mb-4" id="whyUsHeader">Why Workshops & Drivers Choose GENUS</h1>
+              <span className="section-subtitle">{t.whyUs.subtitle}</span>
+              <h1 className="section-title mb-4" id="whyUsHeader">{t.whyUs.title}</h1>
               <p className="mb-5" id="whyUsOverviewText">
-                At GENUS MALAYSIA SDN BHD, we’re your trusted car battery experts. We specialise in high-performance Genus and K-viron car batteries, including calcium-silver technology & EFB Glass mat technology for longer-lasting durability.
+                {t.whyUs.overview}
               </p>
               
               {/* Feature Lists */}
@@ -50,8 +53,8 @@ export default function WhyUs() {
                     <Users size={20} />
                   </div>
                   <div className="why-item-text">
-                    <h4>Professional Technicians</h4>
-                    <p>Our staff are thoroughly trained to install car batteries for standard, luxury, and hybrid vehicles without harming vehicle ECU systems.</p>
+                    <h4>{t.whyUs.reasons[0][0]}</h4>
+                    <p>{t.whyUs.reasons[0][1]}</p>
                   </div>
                 </div>
                 {/* Reason 2 */}
@@ -60,8 +63,8 @@ export default function WhyUs() {
                     <Tag size={20} />
                   </div>
                   <div className="why-item-text">
-                    <h4>Transparent & Honest Pricing</h4>
-                    <p>No hidden charges or unexpected callback fees. The battery price we quote includes delivery, installation, and alternator testing.</p>
+                    <h4>{t.whyUs.reasons[1][0]}</h4>
+                    <p>{t.whyUs.reasons[1][1]}</p>
                   </div>
                 </div>
                 {/* Reason 3 */}
@@ -70,8 +73,8 @@ export default function WhyUs() {
                     <Clock size={20} />
                   </div>
                   <div className="why-item-text">
-                    <h4>Reliable Supply Chain</h4>
-                    <p>With extensive inventory levels and robust wholesale logistics, we guarantee that you get the right battery, right when you need it.</p>
+                    <h4>{t.whyUs.reasons[2][0]}</h4>
+                    <p>{t.whyUs.reasons[2][1]}</p>
                   </div>
                 </div>
               </div>

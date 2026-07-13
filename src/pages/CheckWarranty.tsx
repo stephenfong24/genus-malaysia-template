@@ -1,7 +1,10 @@
 import { CalendarCheck, Search, ShieldCheck, HelpCircle } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
+import { useLanguage } from '../i18n';
 
 export default function CheckWarranty() {
+  const { t } = useLanguage();
+
   return (
     <PageTransition>
       <section 
@@ -51,16 +54,16 @@ export default function CheckWarranty() {
                       border: '1px solid var(--color-accent-dim-strong)'
                     }}
                   >
-                    Warranty Check Coming Soon
+                    {t.warranty.badge}
                   </span>
                 </div>
 
                 <h1 className="text-white fw-extrabold mb-3 font-sans tracking-tight" style={{ fontSize: '1.85rem' }}>
-                  Check Battery Warranty
+                  {t.warranty.title}
                 </h1>
                 
                 <p className="mb-4 font-sans px-2" style={{ color: 'var(--color-gray-300)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  Soon you will be able to verify your Genus or K-Viron battery warranty using the battery serial number or purchase details. Check whether your warranty is active, review the registered purchase date, and get clear next steps for support or replacement claims.
+                  {t.warranty.desc}
                 </p>
 
                 {/* Simulated Warranty Serial Search */}
@@ -72,7 +75,7 @@ export default function CheckWarranty() {
                     <input 
                       type="text" 
                       className="form-control border-0" 
-                      placeholder="Enter battery serial number" 
+                      placeholder={t.warranty.placeholder} 
                       disabled 
                       style={{ 
                         backgroundColor: 'var(--color-secondary)', 
@@ -94,7 +97,7 @@ export default function CheckWarranty() {
                         opacity: 0.8
                       }}
                     >
-                      Check
+                      {t.warranty.check}
                     </button>
                   </div>
                 </div>
@@ -103,22 +106,22 @@ export default function CheckWarranty() {
                   <div className="col d-flex gap-2">
                     <ShieldCheck size={18} style={{ color: 'var(--color-accent)' }} className="flex-shrink-0 mt-0.5" />
                     <div>
-                      <h6 className="text-white mb-0 font-sans small fw-bold">Warranty Status</h6>
-                      <p className="small mb-0 font-sans" style={{ color: 'var(--color-gray-400)' }}>Confirm active battery coverage</p>
+                      <h6 className="text-white mb-0 font-sans small fw-bold">{t.warranty.status}</h6>
+                      <p className="small mb-0 font-sans" style={{ color: 'var(--color-gray-400)' }}>{t.warranty.statusDesc}</p>
                     </div>
                   </div>
                   <div className="col d-flex gap-2">
                     <CalendarCheck size={18} style={{ color: 'var(--color-accent)' }} className="flex-shrink-0 mt-0.5" />
                     <div>
-                      <h6 className="text-white mb-0 font-sans small fw-bold">Purchase Record</h6>
-                      <p className="small mb-0 font-sans" style={{ color: 'var(--color-gray-400)' }}>View purchase and expiry dates</p>
+                      <h6 className="text-white mb-0 font-sans small fw-bold">{t.warranty.record}</h6>
+                      <p className="small mb-0 font-sans" style={{ color: 'var(--color-gray-400)' }}>{t.warranty.recordDesc}</p>
                     </div>
                   </div>
                   <div className="col d-flex gap-2">
                     <HelpCircle size={18} style={{ color: 'var(--color-accent)' }} className="flex-shrink-0 mt-0.5" />
                     <div>
-                      <h6 className="text-white mb-0 font-sans small fw-bold">Claim Guidance</h6>
-                      <p className="small mb-0 font-sans" style={{ color: 'var(--color-gray-400)' }}>Know what to prepare for support</p>
+                      <h6 className="text-white mb-0 font-sans small fw-bold">{t.warranty.guidance}</h6>
+                      <p className="small mb-0 font-sans" style={{ color: 'var(--color-gray-400)' }}>{t.warranty.guidanceDesc}</p>
                     </div>
                   </div>
                 </div>

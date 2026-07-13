@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
+import { useLanguage } from '../i18n';
 
 interface FAQItem {
   id: number;
@@ -9,43 +10,44 @@ interface FAQItem {
 }
 
 export default function FAQ() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0); // Default to first item open
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const { t } = useLanguage();
 
   const faqItems: FAQItem[] = [
     {
       id: 1,
-      question: "How long does the battery delivery and installation take?",
-      answer: "Our delivery and installation team operates efficiently. During our standard business hours, we schedule and dispatch your battery promptly, ensuring a quick and seamless setup process."
+      question: t.faq.items[0][0],
+      answer: t.faq.items[0][1],
     },
     {
       id: 2,
-      question: "Do you provide a warranty with the car batteries?",
-      answer: "Yes! All of our batteries come with a official manufacturer's warranty. Standard petrol cars are backed by an onsite 12 to 18-month warranty, whereas commercial/diesel vehicles are covered for 6 to 12 months."
+      question: t.faq.items[1][0],
+      answer: t.faq.items[1][1],
     },
     {
       id: 3,
-      question: "Can you install the battery at my office or shopping mall parking?",
-      answer: "Absolutely. Our mobile dispatch units are fully outfitted with compact, powerful diagnostic equipment. We can perform complete diagnostic sweeps and battery installations in tight underground structures, office parking bays, or home porches."
+      question: t.faq.items[2][0],
+      answer: t.faq.items[2][1],
     },
     {
       id: 4,
-      question: "What brands of car batteries do you have available?",
-      answer: "We maintain stock of high-performance car battery lines from international automotive tier-1 manufacturers including Bosch, Century, Amaron, Varta, and Yuasa. All units are fresh from production lines."
+      question: t.faq.items[3][0],
+      answer: t.faq.items[3][1],
     },
     {
       id: 5,
-      question: "What are your business operating hours?",
+      question: t.faq.hoursQuestion,
       answer: (
         <div>
-          Our headquarters and supply operations are open during the following hours:
+          {t.faq.hoursIntro}
           <ul className="mt-2 mb-0">
-            <li><strong>Monday – Friday:</strong> 9:00 AM – 6:00 PM</li>
-            <li><strong>Saturday:</strong> 9:00 AM – 1:00 PM</li>
-            <li><strong>Sunday:</strong> Closed</li>
+            <li><strong>{t.faq.weekday}</strong> 9:00 AM - 6:00 PM</li>
+            <li><strong>{t.faq.saturday}</strong> 9:00 AM - 1:00 PM</li>
+            <li><strong>{t.faq.sunday}</strong> {t.faq.closed}</li>
           </ul>
         </div>
-      )
-    }
+      ),
+    },
   ];
 
   const toggleAccordion = (index: number) => {
@@ -56,16 +58,14 @@ export default function FAQ() {
     <PageTransition>
       <section id="faq" className="faq-section section-padding" style={{ paddingTop: '140px', minHeight: '80vh' }}>
         <div className="container">
-          {/* Header */}
           <div className="section-title-container text-center reveal-on-scroll revealed" id="faqTitleWrap">
-            <span className="section-subtitle">Got Questions?</span>
-            <h1 className="section-title" id="faqHeader">Frequently Asked Questions</h1>
+            <span className="section-subtitle">{t.faq.subtitle}</span>
+            <h1 className="section-title" id="faqHeader">{t.faq.title}</h1>
             <p className="section-description mx-auto" id="faqSubtext">
-              Find rapid answers to the most common inquiries regarding our onsite delivery, warranty procedures, and battery configurations.
+              {t.faq.desc}
             </p>
           </div>
           
-          {/* Custom Styled Accordion */}
           <div className="row justify-content-center" id="faqAccordionWrap">
             <div className="col-lg-8">
               <div className="accordion faq-accordion" id="faqAccordion">
@@ -92,7 +92,7 @@ export default function FAQ() {
                               transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', 
                               transition: 'transform 0.3s ease',
                               color: isOpen ? 'var(--color-accent, #FBBF24)' : 'var(--color-gray-500, #9CA3AF)',
-                              flexShrink: 0
+                              flexShrink: 0,
                             }} 
                           />
                         </button>
@@ -101,7 +101,7 @@ export default function FAQ() {
                         className={`accordion-collapse collapse ${isOpen ? 'show' : ''}`}
                         style={{ 
                           display: isOpen ? 'block' : 'none',
-                          transition: 'all 0.3s ease'
+                          transition: 'all 0.3s ease',
                         }}
                       >
                         <div className="accordion-body">

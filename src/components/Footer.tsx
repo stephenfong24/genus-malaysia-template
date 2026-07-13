@@ -8,8 +8,11 @@ import {
   Clock 
 } from 'lucide-react';
 import footerLogo from '../assets/images/genus_logo_cropped_perfect.svg';
+import { useLanguage } from '../i18n';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'instant' as any });
   };
@@ -29,7 +32,7 @@ export default function Footer() {
               />
             </div>
             <p className="footer-desc">
-              GENUS MALAYSIA SDN BHD is a trusted car battery expert and premier battery wholesaler in Malaysia, specialising in high-performance Genus and K-viron car batteries with calcium-silver & EFB Glass mat technology.
+              {t.footer.desc}
             </p>
             <div className="footer-socials" id="footerSocials">
               <a href="https://www.facebook.com/profile.php?id=61585586459271" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">
@@ -43,26 +46,26 @@ export default function Footer() {
           
           {/* Column 2 - Quick Links */}
           <div className="col-lg-2 col-md-4 col-6" id="footerColLinks">
-            <h4 className="footer-widget-title">Quick Links</h4>
+            <h4 className="footer-widget-title">{t.footer.quickLinks}</h4>
             <ul className="footer-links-list">
               <li>
                 <Link to="/" onClick={scrollToTop}>
-                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> Home
+                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> {t.nav.home}
                 </Link>
               </li>
               <li>
                 <Link to="/why-us" onClick={scrollToTop}>
-                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> Why Us
+                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> {t.nav.whyUs}
                 </Link>
               </li>
               <li>
                 <Link to="/brands" onClick={scrollToTop}>
-                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> Brands
+                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> {t.nav.brands}
                 </Link>
               </li>
               <li>
                 <Link to="/faq" onClick={scrollToTop}>
-                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> FAQ
+                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> {t.nav.faq}
                 </Link>
               </li>
             </ul>
@@ -70,16 +73,16 @@ export default function Footer() {
           
           {/* Column 3 - Services */}
           <div className="col-lg-3 col-md-4 col-6" id="footerColServices">
-            <h4 className="footer-widget-title">Services</h4>
+            <h4 className="footer-widget-title">{t.footer.services}</h4>
             <ul className="footer-links-list">
               <li>
                 <Link to="/login" onClick={scrollToTop}>
-                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> Login
+                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> {t.footer.login}
                 </Link>
               </li>
               <li>
                 <Link to="/check-warranty" onClick={scrollToTop}>
-                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> Check Warranty
+                  <ChevronRight size={14} className="footer-icon-accent d-inline me-1" /> {t.nav.checkWarranty}
                 </Link>
               </li>
             </ul>
@@ -87,18 +90,18 @@ export default function Footer() {
           
           {/* Column 4 - Contact Info */}
           <div className="col-lg-3 col-md-4 col-12" id="footerColContact">
-            <h4 className="footer-widget-title">Contact Center</h4>
+            <h4 className="footer-widget-title">{t.footer.contactCenter}</h4>
             <div className="footer-contact-item d-flex align-items-center mb-2">
               <div className="d-flex align-items-center justify-content-center flex-shrink-0 footer-icon-accent" style={{ width: '24px', height: '24px' }}>
                 <Phone size={18} />
               </div>
-              <span>Office: +603-8962 2111</span>
+              <span>{t.footer.office}</span>
             </div>
             <div className="footer-contact-item d-flex align-items-center mb-2">
               <div className="d-flex align-items-center justify-content-center flex-shrink-0 footer-icon-accent" style={{ width: '24px', height: '24px' }}>
                 <MessageCircle size={18} />
               </div>
-              <span>WhatsApp: +60 16-262 7528</span>
+              <span>{t.footer.whatsapp}</span>
             </div>
             <div className="footer-contact-item d-flex align-items-center mb-2">
               <div className="d-flex align-items-center justify-content-center flex-shrink-0 footer-icon-accent" style={{ width: '24px', height: '24px' }}>
@@ -110,15 +113,15 @@ export default function Footer() {
               <div className="d-flex align-items-center justify-content-center flex-shrink-0 footer-icon-accent mt-0.5" style={{ width: '24px', height: '24px' }}>
                 <Clock size={18} />
               </div>
-              <span>Mon-Fri: 9am-6pm | Sat: 9am-1pm</span>
+              <span>{t.footer.hours}</span>
             </div>
           </div>
         </div>
         
         {/* Bottom section */}
         <div className="footer-bottom text-center text-md-start d-md-flex align-items-center justify-content-between" id="footerBottomWrap">
-          <p className="mb-0">&copy; 2026 GENUS MALAYSIA SDN BHD (1290354-T). All Rights Reserved.</p>
-          <p className="mb-0 mt-2 mt-md-0">Powering Malaysia's Roadways with Excellence.</p>
+          <p className="mb-0">{t.footer.rights}</p>
+          <p className="mb-0 mt-2 mt-md-0">{t.footer.tagline}</p>
         </div>
       </div>
     </footer>

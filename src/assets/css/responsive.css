@@ -40,6 +40,16 @@
         padding: 0.75rem 1.25rem !important;
         margin: 0.25rem 0;
     }
+
+    .language-dropdown {
+        margin-left: 1.25rem;
+    }
+
+    .language-menu {
+        right: auto;
+        left: 0;
+        transform-origin: top left;
+    }
     
     .navbar-cta {
         margin-top: 1rem;
@@ -188,8 +198,8 @@
     }
     
     .brand-logo-container {
-        width: 80px;
-        height: 40px;
+        width: 104px;
+        height: 48px;
     }
     
     .floating-card {
