@@ -35,7 +35,7 @@ export default function Footer() {
               <a href="https://www.facebook.com/genusmalaysia" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
-              <a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
+              <a href="https://wa.me/60162627528" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
                 <MessageCircle size={18} />
               </a>
             </div>
@@ -98,7 +98,7 @@ export default function Footer() {
               <div className="d-flex align-items-center justify-content-center flex-shrink-0 footer-icon-accent" style={{ width: '24px', height: '24px' }}>
                 <MessageCircle size={18} />
               </div>
-              <span>WhatsApp: +60 12-345 6789</span>
+              <span>WhatsApp: +60 16-262 7528</span>
             </div>
             <div className="footer-contact-item d-flex align-items-center mb-2">
               <div className="d-flex align-items-center justify-content-center flex-shrink-0 footer-icon-accent" style={{ width: '24px', height: '24px' }}>

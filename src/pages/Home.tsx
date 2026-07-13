@@ -222,7 +222,7 @@ export default function Home() {
               {/* CTA Buttons */}
               <div className="hero-buttons" id="heroCtaWrap">
                 <a 
-                  href="https://wa.me/60123456789?text=Hi%20Genus%20Malaysia,%20I%20would%20like%20to%20enquire%20about%20your%20high-performance%20car%20batteries." 
+                  href="https://wa.me/60162627528?text=Hi%20Genus%20Malaysia,%20I%20would%20like%20to%20enquire%20about%20your%20high-performance%20car%20batteries." 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn btn-premium-outline btn-ripple" 

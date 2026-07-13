@@ -49,7 +49,7 @@ export default function Contact() {
                       </div>
                       <div className="contact-detail-text">
                         <h5>WhatsApp Support</h5>
-                        <p>+60 12-345 6789</p>
+                        <p>+60 16-262 7528</p>
                       </div>
                     </li>
                     {/* Email */}
