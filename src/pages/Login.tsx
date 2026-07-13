@@ -55,9 +55,9 @@ export default function Login() {
                   </span>
                 </div>
 
-                <h2 className="text-white fw-extrabold mb-3 font-sans tracking-tight" style={{ fontSize: '1.85rem' }}>
+                <h1 className="text-white fw-extrabold mb-3 font-sans tracking-tight" style={{ fontSize: '1.85rem' }}>
                   Dealer Portal Access
-                </h2>
+                </h1>
                 
                 <p className="mb-4 font-sans px-2" style={{ color: 'var(--color-gray-300)', fontSize: '0.95rem', lineHeight: '1.6' }}>
                   Our highly secure wholesale ordering system & dealer network portal is currently undergoing final beta tests and certification. 

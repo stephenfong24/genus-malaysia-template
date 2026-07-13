@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /admin
+Disallow: /api
+Disallow: /test
+Disallow: /dev
+
+Sitemap: https://genus-malaysia-template.vercel.app/sitemap.xml

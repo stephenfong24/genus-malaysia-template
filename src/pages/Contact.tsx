@@ -16,7 +16,7 @@ export default function Contact() {
             <div className="col-lg-6 col-md-12 reveal-on-scroll revealed" id="contactInfoColumn">
               <div className="contact-info-card d-flex flex-column justify-content-between h-100">
                 <div>
-                  <h3 className="contact-info-title">Headquarters Info</h3>
+                  <h1 className="contact-info-title">Headquarters Info</h1>
                   <p className="text-muted mb-4">
                     Have questions or looking to purchase high-performance batteries? Get in touch with our expert sales team during our business hours.
                   </p>

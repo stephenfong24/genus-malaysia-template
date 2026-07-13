@@ -37,7 +37,7 @@ export default function WhyUs() {
             {/* Right Content */}
             <div className="col-lg-6 col-md-12 ps-lg-5 mt-5 mt-lg-0 reveal-on-scroll revealed stagger-1" id="whyUsTextWrap">
               <span className="section-subtitle">Our Advantage</span>
-              <h2 className="section-title mb-4" id="whyUsHeader">Why Workshops & Drivers Choose GENUS</h2>
+              <h1 className="section-title mb-4" id="whyUsHeader">Why Workshops & Drivers Choose GENUS</h1>
               <p className="mb-5" id="whyUsOverviewText">
                 At GENUS MALAYSIA SDN BHD, we’re your trusted car battery experts. We specialise in high-performance Genus and K-viron car batteries, including calcium-silver technology & EFB Glass mat technology for longer-lasting durability.
               </p>

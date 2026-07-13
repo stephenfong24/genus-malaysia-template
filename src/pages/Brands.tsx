@@ -65,7 +65,7 @@ export default function Brands() {
           {/* Header */}
           <div className="section-title-container text-center reveal-on-scroll revealed animate-fade-in" id="brandsTitleWrap">
             <span className="section-subtitle">Premium Portfolios</span>
-            <h2 className="section-title" id="brandsHeader">Authorized Battery Brands</h2>
+            <h1 className="section-title" id="brandsHeader">Authorized Battery Brands</h1>
             <p className="section-description mx-auto" id="brandsSubtext">
               We maintain robust inventory levels of high-performance car batteries specialising in Genus and K-viron brands alongside other global automotive brands.
             </p>

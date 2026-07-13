@@ -1,0 +1,18 @@
+{
+  "name": "GENUS MALAYSIA SDN BHD",
+  "short_name": "Genus Malaysia",
+  "description": "Trusted car battery wholesaler and expert in Malaysia.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "/assets/brand/favicon.jpg",
+      "sizes": "1024x1024",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

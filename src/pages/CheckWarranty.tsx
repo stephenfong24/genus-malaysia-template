@@ -55,9 +55,9 @@ export default function CheckWarranty() {
                   </span>
                 </div>
 
-                <h2 className="text-white fw-extrabold mb-3 font-sans tracking-tight" style={{ fontSize: '1.85rem' }}>
+                <h1 className="text-white fw-extrabold mb-3 font-sans tracking-tight" style={{ fontSize: '1.85rem' }}>
                   Check Battery Warranty
-                </h2>
+                </h1>
                 
                 <p className="mb-4 font-sans px-2" style={{ color: 'var(--color-gray-300)', fontSize: '0.95rem', lineHeight: '1.6' }}>
                   Soon you will be able to verify your Genus or K-Viron battery warranty using the battery serial number or purchase details. Check whether your warranty is active, review the registered purchase date, and get clear next steps for support or replacement claims.

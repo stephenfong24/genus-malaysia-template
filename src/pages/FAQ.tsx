@@ -59,7 +59,7 @@ export default function FAQ() {
           {/* Header */}
           <div className="section-title-container text-center reveal-on-scroll revealed" id="faqTitleWrap">
             <span className="section-subtitle">Got Questions?</span>
-            <h2 className="section-title" id="faqHeader">Frequently Asked Questions</h2>
+            <h1 className="section-title" id="faqHeader">Frequently Asked Questions</h1>
             <p className="section-description mx-auto" id="faqSubtext">
               Find rapid answers to the most common inquiries regarding our onsite delivery, warranty procedures, and battery configurations.
             </p>

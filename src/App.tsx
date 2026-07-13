@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ThemeSwitcher from './components/ThemeSwitcher';
+import SEO from './components/SEO';
 
 import Home from './pages/Home';
 import WhyUs from './pages/WhyUs';
@@ -17,6 +18,7 @@ export default function App() {
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100" style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-primary)' }}>
+        <SEO />
         <Header />
         <main className="flex-grow-1">
           <Routes>
