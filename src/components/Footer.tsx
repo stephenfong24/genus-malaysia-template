@@ -104,7 +104,7 @@ export default function Footer() {
               <div className="d-flex align-items-center justify-content-center flex-shrink-0 footer-icon-accent" style={{ width: '24px', height: '24px' }}>
                 <Mail size={18} />
               </div>
-              <span>info@genusmalaysia.com</span>
+              <span>genusmalaysia@gmail.com</span>
             </div>
             <div className="footer-contact-item d-flex align-items-start mb-2">
               <div className="d-flex align-items-center justify-content-center flex-shrink-0 footer-icon-accent mt-0.5" style={{ width: '24px', height: '24px' }}>
