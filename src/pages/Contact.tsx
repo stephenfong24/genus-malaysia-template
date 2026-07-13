@@ -48,7 +48,7 @@ export default function Contact() {
                       </div>
                       <div className="contact-detail-text">
                         <h5>Corporate Email</h5>
-                        <p>info@genusmalaysia.com</p>
+                        <p>genusmalaysia@gmail.com</p>
                       </div>
                     </li>
                     {/* Address */}

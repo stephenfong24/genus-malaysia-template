@@ -32,7 +32,7 @@ export default function Footer() {
               GENUS MALAYSIA SDN BHD is a trusted car battery expert and premier battery wholesaler in Malaysia, specialising in high-performance Genus and K-viron car batteries with calcium-silver & EFB Glass mat technology.
             </p>
             <div className="footer-socials" id="footerSocials">
-              <a href="https://www.facebook.com/genusmalaysia" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61585586459271" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
               <a href="https://wa.me/60162627528" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
