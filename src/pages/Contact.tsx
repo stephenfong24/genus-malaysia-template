@@ -2,7 +2,8 @@ import {
   MessageCircle, 
   Mail, 
   MapPin, 
-  Clock 
+  Clock,
+  Phone
 } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import { useLanguage } from '../i18n';
@@ -25,6 +26,16 @@ export default function Contact() {
                   </p>
                   
                   <ul className="contact-details-list" id="contactDetails">
+                    {/* Office */}
+                    <li className="contact-detail-item">
+                      <div className="contact-detail-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Phone size={18} />
+                      </div>
+                      <div className="contact-detail-text">
+                        <h5>{t.contact.office}</h5>
+                        <p>+603-8962 2111</p>
+                      </div>
+                    </li>
                     {/* WhatsApp */}
                     <li className="contact-detail-item">
                       <div 
