@@ -30,16 +30,16 @@ export default function Brands() {
   const productRangeIcons = [Car, Bus, Truck, BriefcaseBusiness];
   const genusShowcaseImages = [
     {
-      src: "/assets/brand/genus-efb-60b19l.jpeg",
-      alt: "Genus EFB premium SMF battery with packaging",
+      src: "/assets/brand/genus-efb-60b19l-cutout.png",
+      alt: "Genus EFB premium SMF battery",
       label: "EFB Series",
-      className: "genus-showcase-main"
+      className: "genus-showcase-main genus-showcase-product"
     },
     {
-      src: "/assets/brand/genus-smf-60b24rs.jpeg",
-      alt: "Genus premium SMF 60B24RS battery with box",
+      src: "/assets/brand/genus-smf-60b24rs-cutout.png",
+      alt: "Genus premium SMF 60B24RS battery",
       label: "SMF 60B24RS",
-      className: "genus-showcase-wide"
+      className: "genus-showcase-wide genus-showcase-product"
     },
     {
       src: "/assets/brand/genus-agm-ln3-h6.jpeg",

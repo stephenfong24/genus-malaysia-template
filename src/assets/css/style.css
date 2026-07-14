@@ -1175,7 +1175,7 @@ a {
 .genus-showcase {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(132px, auto);
+    grid-auto-rows: 1fr;
     gap: 0.875rem;
 }
 
@@ -1210,6 +1210,15 @@ a {
     transform: scale(1.04);
 }
 
+.genus-showcase-product {
+    background: var(--color-white);
+}
+
+.genus-showcase-product img {
+    object-fit: contain;
+    background: var(--color-white);
+}
+
 .genus-showcase-card figcaption {
     position: absolute;
     left: 0.85rem;
@@ -1225,13 +1234,13 @@ a {
 }
 
 .genus-showcase-main {
-    grid-column: 1 / -1;
-    min-height: 230px;
+    min-height: 210px;
+    aspect-ratio: 1.18;
 }
 
 .genus-showcase-wide {
-    grid-column: 1 / -1;
-    min-height: 168px;
+    min-height: 210px;
+    aspect-ratio: 1.18;
 }
 
 .genus-showcase-tile {
