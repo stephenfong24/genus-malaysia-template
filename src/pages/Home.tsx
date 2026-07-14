@@ -263,56 +263,28 @@ export default function Home() {
             {/* Visual/Artwork Canvas (Right) */}
             <div className="col-lg-6 mt-5 mt-lg-0">
               <div className="hero-visual-container reveal-on-scroll revealed stagger-1" id="heroVisual">
-                <div 
-                  className="glow-backdrop" 
-                  id="visualGlowBackdrop" 
-                  style={{ background: 'radial-gradient(circle, var(--color-accent-dim-strong) 0%, transparent 70%)' }}
-                ></div>
-                
-                {/* Premium Embedded Interactive SVG Battery Illustration */}
-                <svg className="hero-battery-art" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" id="batteryIllustrationSvg">
-                  {/* Background electric pulse */}
-                  <circle cx="250" cy="220" r="140" fill="none" stroke="var(--color-accent-dim-strong)" strokeWidth="2" strokeDasharray="10 15" />
-                  <circle cx="250" cy="220" r="165" fill="none" stroke="var(--color-accent-dim)" strokeWidth="1.5" strokeDasharray="5 10" />
-                  
-                  {/* Battery Terminal Shadows */}
-                  <rect x="145" y="65" width="40" height="25" rx="5" fill="var(--color-primary)" opacity="0.3"/>
-                  <rect x="315" y="65" width="40" height="25" rx="5" fill="var(--color-primary)" opacity="0.3"/>
-                  
-                  {/* Battery Terminals */}
-                  {/* Negative (-) */}
-                  <rect x="140" y="60" width="40" height="25" rx="5" fill="#4B5563" />
-                  <circle cx="160" cy="72" r="6" fill="#D1D5DB" />
-                  <rect x="154" y="71" width="12" height="2" fill="#9CA3AF" />
-                  
-                  {/* Positive (+) */}
-                  <rect x="320" y="60" width="40" height="25" rx="5" fill="#EF4444" />
-                  <circle cx="340" cy="72" r="6" fill="#FCA5A5" />
-                  <path d="M337 72h6M340 69v6" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
-                  
-                  {/* Main Battery Body */}
-                  <rect x="100" y="80" width="300" height="200" rx="16" fill="var(--color-secondary)" stroke="var(--color-accent-dim-strong)" strokeWidth="4" />
-                  
-                  {/* Premium Carbon Fiber Texture Overlay simulated via pattern */}
-                  <rect x="110" y="90" width="280" height="180" rx="10" fill="var(--color-primary)" />
-                  
-                  {/* Branding Badge */}
-                  <rect x="130" y="115" width="240" height="80" rx="8" fill="var(--color-secondary)" stroke="var(--color-accent-dim-strong)" strokeWidth="1.5" />
-                  <text x="250" y="150" fill="#FFFFFF" fontFamily="'Poppins', sans-serif" fontWeight="800" fontSize="22" textAnchor="middle" letterSpacing="2">GENUS</text>
-                  <text x="250" y="178" fill="var(--color-accent, #FBBF24)" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="12" textAnchor="middle" letterSpacing="5">MAX POWER</text>
-                  
-                  {/* Voltage Digital Display Panel */}
-                  <rect x="140" y="215" width="90" height="36" rx="6" fill="var(--color-primary)" stroke="var(--color-accent-dim-strong)" strokeWidth="1" />
-                  <text x="185" y="239" fill="var(--color-accent, #FBBF24)" fontFamily="monospace" fontWeight="700" fontSize="18" textAnchor="middle" letterSpacing="1">12.8V</text>
-                  
-                  {/* Status Indicators */}
-                  <rect x="255" y="215" width="105" height="36" rx="6" fill="var(--color-primary)" stroke="var(--color-accent-dim-strong)" strokeWidth="1" />
-                  <circle cx="275" cy="233" r="5" fill="#10B981" />
-                  <text x="290" y="238" fill="#10B981" fontFamily="'Poppins', sans-serif" fontWeight="600" fontSize="11">{t.home.healthy}</text>
-                </svg>
+                <div className="hero-visual-layer hero-watermark" aria-hidden="true">
+                  <span>GENUS</span>
+                  <small>MAX POWER</small>
+                </div>
+                <img className="hero-visual-layer hero-car-blueprint" src="/assets/images/home/car-blueprint.svg" alt="" aria-hidden="true" loading="lazy" />
+                <div className="hero-visual-layer glow-backdrop" id="visualGlowBackdrop" aria-hidden="true"></div>
+                <img className="hero-visual-layer hero-lightning hero-lightning-rear" src="/assets/images/home/battery-lightning-rear.svg" alt="" aria-hidden="true" loading="lazy" />
+                <img className="hero-visual-layer hero-energy-platform" src="/assets/images/home/energy-platform.svg" alt="" aria-hidden="true" loading="lazy" />
+                <img className="hero-visual-layer hero-particles" src="/assets/images/home/battery-particles.svg" alt="" aria-hidden="true" loading="lazy" />
+                <div className="hero-battery-stage">
+                  <img 
+                    src="/assets/images/home/genus-battery-cutout.png"
+                    alt="GENUS Calcium-Silver Technology car battery"
+                    className="hero-battery-art"
+                    id="batteryIllustrationSvg"
+                    decoding="async"
+                  />
+                </div>
+                <img className="hero-visual-layer hero-lightning hero-lightning-front" src="/assets/images/home/battery-lightning-front.svg" alt="" aria-hidden="true" loading="lazy" />
                 
                 {/* Floating Widgets */}
-                <div className="floating-card floating-card-1" id="floatWidgetResponse" style={{ borderLeft: '4px solid var(--color-accent, #FBBF24)' }}>
+                <div className="floating-card floating-card-1" id="floatWidgetResponse">
                   <Package size={20} className="me-2" style={{ color: 'var(--color-accent, #FBBF24)' }} />
                   <div className="floating-card-text">
                     <h5>{t.home.wholesaleSupply}</h5>
@@ -320,7 +292,7 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="floating-card floating-card-2" id="floatWidgetBrands" style={{ borderLeft: '4px solid var(--color-support, #2563EB)' }}>
+                <div className="floating-card floating-card-2" id="floatWidgetBrands">
                   <Cpu size={20} className="me-2" style={{ color: 'var(--color-support, #2563EB)' }} />
                   <div className="floating-card-text">
                     <h5>{t.home.genusKviron}</h5>

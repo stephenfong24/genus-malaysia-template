@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="170" viewBox="0 0 720 170" fill="none">
+  <defs>
+    <filter id="frontGlow" x="-30%" y="-130%" width="160%" height="360%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.02 0 0 0 0 0.5 0 0 0 0 1 0 0 0 .9 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#frontGlow)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 100c69-12 123-8 168 12 64 29 113 20 170-13 60-35 123-36 188-9 50 21 102 24 174 2" stroke="#19a8ff" stroke-width="3.5"/>
+    <path d="m161 111 33-23-16 31 43 2-43 13 13 29-37-30-45 5 52-27Z" stroke="#79e2ff" stroke-width="2"/>
+    <path d="m474 87 31-23-12 32 43 2-44 12 11 28-36-27-37 7 44-31Z" stroke="#79e2ff" stroke-width="2"/>
+    <path d="M295 118c25-9 48-20 70-35" stroke="#9becff" stroke-width="1.8"/>
+    <path d="M574 102c29 7 58 7 89 2" stroke="#9becff" stroke-width="1.8"/>
+  </g>
+</svg>

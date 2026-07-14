@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="250" viewBox="0 0 720 250" fill="none">
+  <defs>
+    <radialGradient id="platformGlow" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#37c8ff" stop-opacity=".9"/>
+      <stop offset=".45" stop-color="#116dff" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#06122c" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-80%" width="160%" height="260%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+  <ellipse cx="360" cy="124" rx="286" ry="86" fill="url(#platformGlow)" filter="url(#soft)" opacity=".65"/>
+  <g stroke-linecap="round">
+    <ellipse cx="360" cy="124" rx="265" ry="63" stroke="#1fb6ff" stroke-width="3" opacity=".85"/>
+    <ellipse cx="360" cy="124" rx="216" ry="48" stroke="#56d9ff" stroke-width="2" opacity=".72"/>
+    <ellipse cx="360" cy="124" rx="166" ry="33" stroke="#1989ff" stroke-width="2" opacity=".55"/>
+    <path d="M98 120c37-39 127-65 231-69" stroke="#68e4ff" stroke-width="2" opacity=".65"/>
+    <path d="M408 190c101-8 184-39 215-79" stroke="#1297ff" stroke-width="2" opacity=".72"/>
+    <path d="M166 157c65 32 180 43 303 28" stroke="#38caff" stroke-width="2" opacity=".5"/>
+  </g>
+</svg>
