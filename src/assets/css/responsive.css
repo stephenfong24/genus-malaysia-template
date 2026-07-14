@@ -170,6 +170,14 @@
     .genus-why-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .genus-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .genus-product-card {
+        min-height: 0;
+    }
 }
 
 /* --- Small-Medium / Tablet (768px and down) --- */
@@ -356,6 +364,22 @@
 
     .genus-why-card {
         min-height: 0;
+    }
+
+    .genus-product-range {
+        padding: 1.5rem;
+    }
+
+    .genus-product-copy h2 {
+        font-size: 1.65rem;
+    }
+
+    .genus-product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .genus-product-closing {
+        align-items: flex-start;
     }
     
     .brand-card {

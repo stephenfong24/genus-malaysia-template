@@ -116,6 +116,16 @@ export const translations = {
         ['Quality Assured', "Every battery undergoes strict quality control and performance testing before reaching customers. Public information about the broader Genus group's manufacturing highlights advanced testing and quality-focused production processes."],
         ['Warranty Support', 'Comprehensive warranty coverage through our authorised dealer network, giving customers greater peace of mind.'],
       ],
+      productRangeEyebrow: 'Product Range',
+      productRangeTitle: 'Our Product Range',
+      productRangeIntro: 'Genus Batteries offers a comprehensive range of automotive batteries to suit various vehicle types and driving requirements.',
+      productRangeItems: [
+        ['Passenger Vehicle Batteries', 'Reliable maintenance-free batteries designed for everyday driving with dependable starting performance and long-lasting durability.'],
+        ['SUV & MPV Batteries', 'High-capacity batteries engineered to support larger vehicles with increased electrical demands.'],
+        ['Commercial Vehicle Batteries', 'Heavy-duty batteries built to deliver dependable performance for vans, trucks, and commercial fleets operating under demanding conditions.'],
+        ['Fleet Solutions', 'Battery solutions tailored for business fleets, helping maximise vehicle uptime and operational efficiency.'],
+      ],
+      productRangeClosing: 'No matter your destination, Genus Batteries provides dependable power that keeps you moving with confidence.',
     },
     faq: {
       subtitle: 'Got Questions?',
@@ -283,6 +293,16 @@ export const translations = {
         ['品质保证', '每颗电池在交付客户前都经过严格品质控制与性能测试。关于更广泛 Genus 集团的公开信息也强调其先进测试与重视品质的生产流程。'],
         ['保修支持', '通过我们的授权经销商网络提供全面保修覆盖，为客户带来更安心的保障。'],
       ],
+      productRangeEyebrow: '产品系列',
+      productRangeTitle: '我们的产品系列',
+      productRangeIntro: 'Genus 电池提供完整的汽车电池系列，适合不同车辆类型与驾驶需求。',
+      productRangeItems: [
+        ['乘用车电池', '可靠的免维护电池，专为日常驾驶设计，提供稳定启动表现与持久耐用性。'],
+        ['SUV 与 MPV 电池', '高容量电池，专为支援较大型车辆与更高电气需求而设计。'],
+        ['商用车电池', '重型电池，为厢型车、卡车与商业车队在严苛条件下提供可靠性能。'],
+        ['车队解决方案', '为企业车队量身打造的电池解决方案，帮助提升车辆上线时间与运营效率。'],
+      ],
+      productRangeClosing: '无论您的目的地在哪里，Genus 电池都能提供可靠动力，让您充满信心地持续前行。',
     },
     faq: {
       subtitle: '有疑问？',

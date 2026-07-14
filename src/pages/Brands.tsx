@@ -2,10 +2,14 @@ import React from 'react';
 import {
   BadgeCheck,
   BatteryCharging,
+  BriefcaseBusiness,
+  Bus,
+  Car,
   CheckCircle2,
   ShieldCheck,
   Sparkles,
   Sun,
+  Truck,
   TimerReset,
   Zap
 } from 'lucide-react';
@@ -24,6 +28,7 @@ interface Brand {
 export default function Brands() {
   const { t } = useLanguage();
   const whyChooseIcons = [Zap, Sun, TimerReset, Sparkles, BadgeCheck, ShieldCheck];
+  const productRangeIcons = [Car, Bus, Truck, BriefcaseBusiness];
 
   const brandsList: Brand[] = [
     {
@@ -219,6 +224,35 @@ export default function Brands() {
                   </article>
                 );
               })}
+            </div>
+          </div>
+
+          <div className="genus-product-range animate-on-scroll fade-up" id="genusProductRange">
+            <div className="genus-product-copy">
+              <span className="genus-product-eyebrow">{t.brands.productRangeEyebrow}</span>
+              <h2>{t.brands.productRangeTitle}</h2>
+              <p>{t.brands.productRangeIntro}</p>
+            </div>
+
+            <div className="genus-product-grid">
+              {t.brands.productRangeItems.map(([title, description], index) => {
+                const Icon = productRangeIcons[index] ?? BatteryCharging;
+
+                return (
+                  <article className="genus-product-card" key={title}>
+                    <div className="genus-product-icon">
+                      <Icon size={24} />
+                    </div>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </article>
+                );
+              })}
+            </div>
+
+            <div className="genus-product-closing">
+              <BatteryCharging size={20} />
+              <p>{t.brands.productRangeClosing}</p>
             </div>
           </div>
         </div>
