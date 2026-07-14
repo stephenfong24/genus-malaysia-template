@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Check, ChevronDown, Globe2 } from 'lucide-react';
-import logo from '../assets/images/genus_logo_cropped_perfect.svg';
+import logo from '../assets/images/genus_logo_company_enhanced_cropped.png';
 import { useLanguage, type Language } from '../i18n';
 
 export default function Header() {

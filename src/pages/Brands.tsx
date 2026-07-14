@@ -14,7 +14,6 @@ import {
   Zap
 } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
-import genusBatteryMalaysiaImg from '../assets/images/genus_gs650_battery_uploaded_1783755776844.jpg';
 import { useLanguage } from '../i18n';
 
 interface Brand {
@@ -29,11 +28,38 @@ export default function Brands() {
   const { t } = useLanguage();
   const whyChooseIcons = [Zap, Sun, TimerReset, Sparkles, BadgeCheck, ShieldCheck];
   const productRangeIcons = [Car, Bus, Truck, BriefcaseBusiness];
+  const genusShowcaseImages = [
+    {
+      src: "/assets/brand/genus-efb-60b19l.jpeg",
+      alt: "Genus EFB premium SMF battery with packaging",
+      label: "EFB Series",
+      className: "genus-showcase-main"
+    },
+    {
+      src: "/assets/brand/genus-smf-60b24rs.jpeg",
+      alt: "Genus premium SMF 60B24RS battery with box",
+      label: "SMF 60B24RS",
+      className: "genus-showcase-wide"
+    },
+    {
+      src: "/assets/brand/genus-agm-ln3-h6.jpeg",
+      alt: "Genus start stop AGM battery",
+      label: "AGM Start Stop",
+      className: "genus-showcase-tile"
+    },
+    {
+      src: "/assets/brand/genus-afb-technology.jpeg",
+      alt: "Genus AFB maintenance free battery",
+      label: "AFB Technology",
+      className: "genus-showcase-tile"
+    }
+  ];
 
   const brandsList: Brand[] = [
     {
       id: "brandGenus",
-      logoSrc: "/assets/brand/genus-logo.png",
+      logoSrc: "/assets/brand/genus-logo-brand-card.png",
+      logoClassName: "brand-logo-image--genus",
       name: "Genus",
       desc: t.brands.brandDescs[0]
     },
@@ -163,38 +189,13 @@ export default function Brands() {
 
             {/* Right Image Column */}
             <div className="col-lg-5 col-12 animate-on-scroll fade-scale stagger-1" id="genusFeaturedImageCol">
-              <div 
-                className="position-relative overflow-hidden rounded-4 shadow-lg border"
-                style={{ 
-                  borderColor: 'var(--color-accent-dim-strong, rgba(251, 191, 36, 0.2))',
-                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
-                }}
-              >
-                {/* Visual Accent Glow effect */}
-                <div 
-                  className="position-absolute w-100 h-100" 
-                  style={{ 
-                    background: 'linear-gradient(185deg, var(--color-accent-dim, rgba(251, 191, 36, 0.08)) 0%, rgba(0,0,0,0) 50%)',
-                    pointerEvents: 'none',
-                    zIndex: 1
-                  }}
-                />
-                <img 
-                  src={genusBatteryMalaysiaImg} 
-                  alt="Premium Genus Battery Malaysia" 
-                  className="w-100 h-auto d-block" 
-                  style={{ 
-                    objectFit: 'cover',
-                    transition: 'transform 0.5s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.03)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.0)';
-                  }}
-                  referrerPolicy="no-referrer"
-                />
+              <div className="genus-showcase" aria-label="Genus battery product showcase">
+                {genusShowcaseImages.map((image) => (
+                  <figure className={`genus-showcase-card ${image.className}`} key={image.src}>
+                    <img src={image.src} alt={image.alt} loading="lazy" />
+                    <figcaption>{image.label}</figcaption>
+                  </figure>
+                ))}
               </div>
             </div>
           </div>

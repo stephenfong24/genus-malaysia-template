@@ -178,6 +178,11 @@
     .genus-product-card {
         min-height: 0;
     }
+
+    .genus-showcase {
+        max-width: 720px;
+        margin: 0 auto;
+    }
 }
 
 /* --- Small-Medium / Tablet (768px and down) --- */
@@ -364,6 +369,18 @@
 
     .genus-why-card {
         min-height: 0;
+    }
+
+    .genus-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .genus-showcase-main,
+    .genus-showcase-wide,
+    .genus-showcase-tile {
+        grid-column: auto;
+        min-height: 210px;
+        aspect-ratio: 16 / 10;
     }
 
     .genus-product-range {

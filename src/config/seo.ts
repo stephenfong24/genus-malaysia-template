@@ -21,7 +21,7 @@ export const siteConfig = {
   },
   socialProfiles: ['https://www.facebook.com/profile.php?id=61585586459271'],
   assets: {
-    logo: '/assets/brand/genus-logo.svg',
+    logo: '/assets/brand/genus-logo-updated.png',
     favicon: '/assets/brand/favicon.jpg',
     ogImage: '/assets/seo/og-default.jpg',
   },

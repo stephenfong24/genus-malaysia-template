@@ -7,7 +7,7 @@ import {
   Mail, 
   Clock 
 } from 'lucide-react';
-import footerLogo from '../assets/images/genus_logo_cropped_perfect.svg';
+import footerLogo from '../assets/images/genus_logo_company_enhanced_cropped.png';
 import { useLanguage } from '../i18n';
 
 export default function Footer() {
