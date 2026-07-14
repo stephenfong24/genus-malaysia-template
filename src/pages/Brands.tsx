@@ -1,5 +1,14 @@
 import React from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import {
+  BadgeCheck,
+  BatteryCharging,
+  CheckCircle2,
+  ShieldCheck,
+  Sparkles,
+  Sun,
+  TimerReset,
+  Zap
+} from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import genusBatteryMalaysiaImg from '../assets/images/genus_gs650_battery_uploaded_1783755776844.jpg';
 import { useLanguage } from '../i18n';
@@ -14,6 +23,7 @@ interface Brand {
 
 export default function Brands() {
   const { t } = useLanguage();
+  const whyChooseIcons = [Zap, Sun, TimerReset, Sparkles, BadgeCheck, ShieldCheck];
 
   const brandsList: Brand[] = [
     {
@@ -133,37 +143,16 @@ export default function Brands() {
                 {t.brands.paragraph2}
               </p>
 
-              {/* Key Features List */}
-              <div className="d-flex flex-column gap-3 mt-4">
-                <div className="d-flex align-items-start gap-3">
-                  <div className="brand-icon-accent flex-shrink-0 mt-1">
-                    <CheckCircle2 size={22} />
+              <div className="genus-core-features" aria-label="Genus battery core features">
+                {t.brands.features.map(([title, description]) => (
+                  <div className="genus-core-feature" key={title}>
+                    <CheckCircle2 size={20} />
+                    <div>
+                      <h5>{title}</h5>
+                      <p>{description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h5 className="fw-bold mb-1 text-white font-sans" style={{ fontSize: '1.1rem' }}>{t.brands.features[0][0]}</h5>
-                    <p className="mb-0 small opacity-80" style={{ color: 'var(--color-gray-300)' }}>{t.brands.features[0][1]}</p>
-                  </div>
-                </div>
-
-                <div className="d-flex align-items-start gap-3">
-                  <div className="brand-icon-accent flex-shrink-0 mt-1">
-                    <CheckCircle2 size={22} />
-                  </div>
-                  <div>
-                    <h5 className="fw-bold mb-1 text-white font-sans" style={{ fontSize: '1.1rem' }}>{t.brands.features[1][0]}</h5>
-                    <p className="mb-0 small opacity-80" style={{ color: 'var(--color-gray-300)' }}>{t.brands.features[1][1]}</p>
-                  </div>
-                </div>
-
-                <div className="d-flex align-items-start gap-3">
-                  <div className="brand-icon-accent flex-shrink-0 mt-1">
-                    <CheckCircle2 size={22} />
-                  </div>
-                  <div>
-                    <h5 className="fw-bold mb-1 text-white font-sans" style={{ fontSize: '1.1rem' }}>{t.brands.features[2][0]}</h5>
-                    <p className="mb-0 small opacity-80" style={{ color: 'var(--color-gray-300)' }}>{t.brands.features[2][1]}</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -202,6 +191,34 @@ export default function Brands() {
                   referrerPolicy="no-referrer"
                 />
               </div>
+            </div>
+          </div>
+
+          <div className="genus-why-panel animate-on-scroll fade-up" id="genusWhyChoose">
+            <div className="genus-why-header">
+              <div className="genus-why-kicker">
+                <BatteryCharging size={18} />
+                <span>{t.brands.whyChooseTitle}</span>
+              </div>
+              <p>{t.brands.whyChooseIntro}</p>
+            </div>
+
+            <div className="genus-why-grid">
+              {t.brands.whyChooseItems.map(([title, description], index) => {
+                const Icon = whyChooseIcons[index] ?? CheckCircle2;
+
+                return (
+                  <article className="genus-why-card" key={title}>
+                    <div className="genus-why-icon">
+                      <Icon size={22} />
+                    </div>
+                    <div>
+                      <h3>{title}</h3>
+                      <p>{description}</p>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </div>

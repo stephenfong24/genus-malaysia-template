@@ -166,6 +166,10 @@
         margin-left: 50px !important;
         margin-right: 0 !important;
     }
+
+    .genus-why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 /* --- Small-Medium / Tablet (768px and down) --- */
@@ -334,6 +338,24 @@
     
     .stats-card::after {
         display: none !important;
+    }
+
+    .genus-why-panel {
+        margin-top: 3rem;
+        padding: 1.5rem;
+    }
+
+    .genus-why-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .genus-why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .genus-why-card {
+        min-height: 0;
     }
     
     .brand-card {

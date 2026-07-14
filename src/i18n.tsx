@@ -106,6 +106,16 @@ export const translations = {
         ['High Heat Resistance & Anti-Vibration', 'Built to withstand demanding tropical climates and rough road conditions.'],
         ['Low Maintenance & Fast Charging', 'Engineered for convenience, deep discharge recovery, and rapid charge retention.'],
       ],
+      whyChooseTitle: 'Why Choose Genus Batteries',
+      whyChooseIntro: 'Built for everyday confidence, harsh local conditions, and dependable long-term ownership.',
+      whyChooseItems: [
+        ['Reliable Starting Power', 'Engineered to deliver dependable engine starts with consistent electrical performance.'],
+        ['Built for Tropical Climate', "Designed to withstand Malaysia's high temperatures and humid driving conditions."],
+        ['Long Service Life', 'Manufactured using quality materials and advanced production processes for extended battery life.'],
+        ['Maintenance-Free Convenience', 'Selected models feature sealed maintenance-free technology for hassle-free ownership.'],
+        ['Quality Assured', "Every battery undergoes strict quality control and performance testing before reaching customers. Public information about the broader Genus group's manufacturing highlights advanced testing and quality-focused production processes."],
+        ['Warranty Support', 'Comprehensive warranty coverage through our authorised dealer network, giving customers greater peace of mind.'],
+      ],
     },
     faq: {
       subtitle: 'Got Questions?',
@@ -262,6 +272,16 @@ export const translations = {
         ['钙银技术', '提升启动电力并延长整体寿命。'],
         ['高耐热与抗震', '适合应对热带气候与崎岖道路条件。'],
         ['低维护与快速充电', '专为便利性、深度放电恢复与快速蓄电而设计。'],
+      ],
+      whyChooseTitle: '为什么选择 Genus 电池',
+      whyChooseIntro: '为日常驾驶信心、本地严苛气候与长期可靠使用而打造。',
+      whyChooseItems: [
+        ['可靠启动电力', '工程设计可提供可靠的引擎启动表现，并保持稳定的电气性能。'],
+        ['适合热带气候', '专为承受马来西亚高温与潮湿驾驶环境而设计。'],
+        ['更长使用寿命', '采用优质材料与先进生产流程制造，延长电池使用寿命。'],
+        ['免维护便利性', '指定型号采用密封免维护技术，让车主使用更省心。'],
+        ['品质保证', '每颗电池在交付客户前都经过严格品质控制与性能测试。关于更广泛 Genus 集团的公开信息也强调其先进测试与重视品质的生产流程。'],
+        ['保修支持', '通过我们的授权经销商网络提供全面保修覆盖，为客户带来更安心的保障。'],
       ],
     },
     faq: {
