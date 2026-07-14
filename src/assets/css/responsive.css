@@ -100,14 +100,23 @@
     }
 
     .hero-lightning-rear {
-        top: 29%;
-        left: -22%;
-        width: 142%;
+        top: 25%;
+        left: -18%;
+        width: 138%;
+        opacity: 0.94;
+    }
+
+    .hero-lightning-front {
+        top: auto;
+        bottom: 10%;
+        left: -14%;
+        width: 128%;
+        opacity: 0.86;
     }
 
     .hero-energy-platform {
-        width: 100%;
-        bottom: 9%;
+        width: 112%;
+        bottom: 5%;
     }
 
     .floating-card-1 {
@@ -279,6 +288,7 @@
     .glow-backdrop {
         width: 360px;
         height: 360px;
+        filter: blur(14px);
     }
 
     .hero-battery-stage {
@@ -287,27 +297,28 @@
     }
 
     .hero-lightning-rear {
-        top: 34%;
-        left: -36%;
-        width: 168%;
-        opacity: 0.78;
+        top: 40%;
+        left: -34%;
+        width: 172%;
+        opacity: 0.82;
     }
 
     .hero-lightning-front {
-        top: 34%;
-        left: -46%;
-        width: 198%;
-        opacity: 0.76;
+        top: auto;
+        bottom: 12%;
+        left: -30%;
+        width: 164%;
+        opacity: 0.78;
     }
 
     .hero-energy-platform {
-        bottom: 9%;
-        width: 112%;
+        bottom: 5%;
+        width: 124%;
     }
 
     .hero-particles {
-        width: 130%;
-        opacity: 0.42;
+        width: 132%;
+        opacity: 0.58;
     }
     
     .stats-card-container {

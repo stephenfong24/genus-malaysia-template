@@ -1,21 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="250" viewBox="0 0 720 250" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="320" viewBox="0 0 920 320" fill="none">
   <defs>
-    <radialGradient id="platformGlow" cx="50%" cy="50%" r="50%">
-      <stop stop-color="#37c8ff" stop-opacity=".9"/>
-      <stop offset=".45" stop-color="#116dff" stop-opacity=".42"/>
-      <stop offset="1" stop-color="#06122c" stop-opacity="0"/>
+    <radialGradient id="platformCore" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#e9fbff" stop-opacity=".7"/>
+      <stop offset=".2" stop-color="#48d8ff" stop-opacity=".52"/>
+      <stop offset=".45" stop-color="#077eff" stop-opacity=".34"/>
+      <stop offset=".72" stop-color="#003cb6" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#00133e" stop-opacity="0"/>
     </radialGradient>
-    <filter id="soft" x="-30%" y="-80%" width="160%" height="260%">
-      <feGaussianBlur stdDeviation="8"/>
+    <filter id="platformBlur" x="-28%" y="-80%" width="156%" height="260%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="ringGlow" x="-30%" y="-130%" width="160%" height="360%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.05 0 0 0 0 0.56 0 0 0 0 1 0 0 0 .9 0" result="blue"/>
+      <feMerge>
+        <feMergeNode in="blue"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
-  <ellipse cx="360" cy="124" rx="286" ry="86" fill="url(#platformGlow)" filter="url(#soft)" opacity=".65"/>
-  <g stroke-linecap="round">
-    <ellipse cx="360" cy="124" rx="265" ry="63" stroke="#1fb6ff" stroke-width="3" opacity=".85"/>
-    <ellipse cx="360" cy="124" rx="216" ry="48" stroke="#56d9ff" stroke-width="2" opacity=".72"/>
-    <ellipse cx="360" cy="124" rx="166" ry="33" stroke="#1989ff" stroke-width="2" opacity=".55"/>
-    <path d="M98 120c37-39 127-65 231-69" stroke="#68e4ff" stroke-width="2" opacity=".65"/>
-    <path d="M408 190c101-8 184-39 215-79" stroke="#1297ff" stroke-width="2" opacity=".72"/>
-    <path d="M166 157c65 32 180 43 303 28" stroke="#38caff" stroke-width="2" opacity=".5"/>
+  <ellipse cx="460" cy="160" rx="380" ry="112" fill="url(#platformCore)" filter="url(#platformBlur)" opacity=".9"/>
+  <g filter="url(#ringGlow)" stroke-linecap="round">
+    <ellipse cx="460" cy="160" rx="374" ry="94" stroke="#1aa7ff" stroke-width="4" opacity=".92"/>
+    <ellipse cx="460" cy="160" rx="306" ry="74" stroke="#69e4ff" stroke-width="3" opacity=".86"/>
+    <ellipse cx="460" cy="160" rx="230" ry="52" stroke="#0e83ff" stroke-width="3" opacity=".66"/>
+    <ellipse cx="460" cy="160" rx="156" ry="32" stroke="#bcf6ff" stroke-width="2" opacity=".52"/>
+    <path d="M82 159c54-55 181-92 333-96" stroke="#b8f6ff" stroke-width="3" opacity=".7"/>
+    <path d="M514 249c151-8 277-54 329-115" stroke="#2bc8ff" stroke-width="3" opacity=".82"/>
+    <path d="M154 204c102 48 277 62 472 37" stroke="#4fdcff" stroke-width="2.5" opacity=".56"/>
+    <path d="M625 91c91 15 158 43 200 81" stroke="#83edff" stroke-width="2.5" opacity=".48"/>
   </g>
 </svg>
