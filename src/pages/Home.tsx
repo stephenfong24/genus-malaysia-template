@@ -218,16 +218,16 @@ export default function Home() {
         <div className="container">
           <div className="row align-items-center">
             {/* Textual Content (Left) */}
-            <div className="col-lg-6 reveal-on-scroll revealed">
-              <h1 className="hero-title" id="heroMainTitle">
+            <div className="col-lg-6">
+              <h1 className="hero-title animate-on-scroll fade-up hero-stagger-1" id="heroMainTitle">
                 {t.home.heroTitleTop}<br /><span>{t.home.heroTitleAccent}</span>
               </h1>
-              <p className="hero-subtitle" id="heroSubtext">
+              <p className="hero-subtitle animate-on-scroll fade-up hero-stagger-2" id="heroSubtext">
                 {t.home.heroSubtitle}
               </p>
               
               {/* Trust Badges */}
-              <div className="hero-badges" id="heroBadgeGrid">
+              <div className="hero-badges animate-on-scroll fade-up hero-stagger-3 stagger-group" id="heroBadgeGrid">
                 <div className="hero-badge-item" id="badgeGenuine">
                   <BadgeCheck size={18} className="text-warning me-1" />
                   <span>{t.home.badges[0]}</span>
@@ -247,7 +247,7 @@ export default function Home() {
               </div>
               
               {/* CTA Buttons */}
-              <div className="hero-buttons" id="heroCtaWrap">
+              <div className="hero-buttons animate-on-scroll fade-up hero-stagger-4" id="heroCtaWrap">
                 <a 
                   href="https://wa.me/60162627528?text=Hi%20Genus%20Malaysia,%20I%20would%20like%20to%20enquire%20about%20your%20high-performance%20car%20batteries." 
                   target="_blank" 
@@ -262,7 +262,7 @@ export default function Home() {
             
             {/* Visual/Artwork Canvas (Right) */}
             <div className="col-lg-6 mt-5 mt-lg-0">
-              <div className="hero-visual-container reveal-on-scroll revealed stagger-1" id="heroVisual">
+              <div className="hero-visual-container animate-on-scroll fade-scale hero-stagger-2" id="heroVisual">
                 <div className="hero-visual-layer hero-watermark" aria-hidden="true">
                   <span>GENUS</span>
                   <small>MAX POWER</small>
@@ -308,24 +308,24 @@ export default function Home() {
       {/* 3. STATISTICS SECTION */}
       <section className="stats-section" id="stats">
         <div className="container">
-          <div className="stats-card-container" id="statsGrid">
+          <div className="stats-card-container stagger-group" id="statsGrid">
             {/* Stat Item 1 */}
-            <div className="stats-card" id="statCustomers">
+            <div className="stats-card animate-on-scroll fade-up" id="statCustomers">
               <AnimatedCounter target={10000} suffix="+" />
               <div className="stats-label">{t.home.stats[0]}</div>
             </div>
             {/* Stat Item 2 */}
-            <div className="stats-card" id="statExperience">
+            <div className="stats-card animate-on-scroll fade-up" id="statExperience">
               <AnimatedCounter target={15} suffix="+" />
               <div className="stats-label">{t.home.stats[1]}</div>
             </div>
             {/* Stat Item 3 */}
-            <div className="stats-card" id="statResponse">
+            <div className="stats-card animate-on-scroll fade-up" id="statResponse">
               <AnimatedCounter target={100} suffix="%" />
               <div className="stats-label">{t.home.stats[2]}</div>
             </div>
             {/* Stat Item 4 */}
-            <div className="stats-card" id="statGenuine">
+            <div className="stats-card animate-on-scroll fade-up" id="statGenuine">
               <AnimatedCounter target={100} suffix="%" />
               <div className="stats-label">{t.home.stats[3]}</div>
             </div>
@@ -337,7 +337,7 @@ export default function Home() {
       <section id="services" className="services-section section-padding">
         <div className="container">
           {/* Title */}
-          <div className="section-title-container text-center reveal-on-scroll revealed" id="servicesTitleWrap">
+          <div className="section-title-container text-center animate-on-scroll fade-up" id="servicesTitleWrap">
             <span className="section-subtitle">{t.home.servicesSubtitle}</span>
             <h2 className="section-title" id="servicesHeader">{t.home.servicesTitle}</h2>
             <p className="section-description mx-auto" id="servicesSubtext">
@@ -346,11 +346,11 @@ export default function Home() {
           </div>
           
           {/* Service Cards Grid */}
-          <div className="row g-4" id="servicesGrid">
+          <div className="row g-4 stagger-group" id="servicesGrid">
             {localizedServices.map((service) => (
               <div 
                 key={service.id} 
-                className="col-md-6 col-lg-4 reveal-on-scroll revealed" 
+                className="col-md-6 col-lg-4 animate-on-scroll fade-up" 
                 id={service.id}
               >
                 <div className="service-card">
@@ -370,7 +370,7 @@ export default function Home() {
       <section id="testimonials" className="testimonials-section section-padding">
         <div className="container">
           {/* Header */}
-          <div className="section-title-container text-center reveal-on-scroll revealed" id="testimonialsTitleWrap">
+          <div className="section-title-container text-center animate-on-scroll fade-up" id="testimonialsTitleWrap">
             <span className="section-subtitle" style={{ color: 'var(--color-accent, #FBBF24)' }}>{t.home.testimonialsSubtitle}</span>
             <h2 className="section-title light" id="testimonialsHeader">{t.home.testimonialsTitle}</h2>
             <p className="section-description mx-auto text-light opacity-75" id="testimonialsSubtext">
@@ -379,7 +379,7 @@ export default function Home() {
           </div>
           
           {/* Custom React Carousel Slider */}
-          <div className="testimonial-carousel-container reveal-on-scroll revealed stagger-1" id="testimonialCarouselWrap">
+          <div className="testimonial-carousel-container animate-on-scroll fade-up stagger-1" id="testimonialCarouselWrap">
             <div className="carousel slide">
               {/* Carousel Indicators */}
               <div className="carousel-indicators carousel-indicators-custom">
@@ -433,7 +433,7 @@ export default function Home() {
       <section id="timeline" className="timeline-section section-padding">
         <div className="container">
           {/* Header */}
-          <div className="section-title-container text-center reveal-on-scroll revealed" id="timelineTitleWrap">
+          <div className="section-title-container text-center animate-on-scroll fade-up" id="timelineTitleWrap">
             <span className="section-subtitle">{t.home.timelineSubtitle}</span>
             <h2 className="section-title" id="timelineHeader">{t.home.timelineTitle}</h2>
             <p className="section-description mx-auto" id="timelineSubtext">
@@ -442,13 +442,13 @@ export default function Home() {
           </div>
           
           {/* Timeline Structure */}
-          <div className="timeline-wrapper" id="timelineContainer">
+          <div className="timeline-wrapper stagger-group" id="timelineContainer">
             <div className="timeline-line" style={{ backgroundColor: 'var(--color-accent-dim-strong, rgba(251, 191, 36, 0.2))' }}></div>
             
             {localizedSteps.map((step) => (
               <div 
                 key={step.num} 
-                className="timeline-item reveal-on-scroll revealed" 
+                className="timeline-item animate-on-scroll fade-up" 
                 id={step.id}
               >
                 <div className="timeline-badge" style={{ backgroundColor: 'var(--color-accent, #FBBF24)', color: 'var(--color-primary, #111827)' }}>
@@ -478,7 +478,7 @@ export default function Home() {
       >
         <div className="container">
           {/* Header */}
-          <div className="section-title-container text-center reveal-on-scroll revealed mb-5" id="galleryTitleWrap">
+          <div className="section-title-container text-center animate-on-scroll fade-up mb-5" id="galleryTitleWrap">
             <span className="section-subtitle" style={{ color: 'var(--color-accent, #FBBF24)' }}>{t.home.gallerySubtitle}</span>
             <h2 className="section-title text-white" id="galleryHeader">{t.home.galleryTitle}</h2>
             <p className="section-description mx-auto text-gray-300 opacity-80" id="gallerySubtext" style={{ maxWidth: '650px' }}>
@@ -487,11 +487,11 @@ export default function Home() {
           </div>
 
           {/* Masonry Columns Grid */}
-          <div className="gallery-masonry-container" id="galleryMasonryContainer">
+          <div className="gallery-masonry-container stagger-group" id="galleryMasonryContainer">
             {localizedGalleryItems.map((item) => (
               <div 
                 key={item.id} 
-                className="gallery-masonry-card mb-4 overflow-hidden rounded-4 border border-1" 
+                className="gallery-masonry-card animate-on-scroll fade-up mb-4 overflow-hidden rounded-4 border border-1" 
                 id={`galleryCard${item.id}`}
                 style={{ 
                   backgroundColor: 'var(--color-secondary, #111827)', 

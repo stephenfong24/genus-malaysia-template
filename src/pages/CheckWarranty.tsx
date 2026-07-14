@@ -19,7 +19,7 @@ export default function CheckWarranty() {
       >
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-xl-8 col-lg-9 col-md-10 col-12 reveal-on-scroll revealed" id="maintenanceCardContainer">
+            <div className="col-xl-8 col-lg-9 col-md-10 col-12 animate-on-scroll fade-up" id="maintenanceCardContainer">
               <div 
                 className="coming-soon-card p-5 rounded-4 shadow-lg border border-1 text-center" 
                 style={{ 

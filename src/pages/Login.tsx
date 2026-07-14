@@ -19,7 +19,7 @@ export default function Login() {
       >
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-5 col-md-8 col-12 reveal-on-scroll revealed" id="loginCardContainer">
+            <div className="col-lg-5 col-md-8 col-12 animate-on-scroll fade-up" id="loginCardContainer">
               <div 
                 className="coming-soon-card text-center p-5 rounded-4 shadow-lg border border-1" 
                 style={{ 

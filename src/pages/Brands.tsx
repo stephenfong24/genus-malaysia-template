@@ -60,7 +60,7 @@ export default function Brands() {
       <section id="brands" className="brands-section section-padding" style={{ paddingTop: '140px', paddingBottom: '60px', minHeight: 'auto' }}>
         <div className="container">
           {/* Header */}
-          <div className="section-title-container text-center reveal-on-scroll revealed animate-fade-in" id="brandsTitleWrap">
+          <div className="section-title-container text-center animate-on-scroll fade-up" id="brandsTitleWrap">
             <span className="section-subtitle">{t.brands.subtitle}</span>
             <h1 className="section-title" id="brandsHeader">{t.brands.title}</h1>
             <p className="section-description mx-auto" id="brandsSubtext">
@@ -69,11 +69,11 @@ export default function Brands() {
           </div>
           
           {/* Brands Logo Grid */}
-          <div className="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5" id="brandsGrid">
+          <div className="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5 stagger-group" id="brandsGrid">
             {brandsList.map((brand) => (
               <div 
                 key={brand.id} 
-                className="col reveal-on-scroll revealed" 
+                className="col animate-on-scroll fade-up" 
                 id={brand.id}
               >
                 <div className="brand-card">
@@ -108,7 +108,7 @@ export default function Brands() {
         <div className="container">
           <div className="row align-items-center g-5">
             {/* Left Content Column */}
-            <div className="col-lg-7 col-12 text-white" id="genusFeaturedContent">
+            <div className="col-lg-7 col-12 text-white animate-on-scroll fade-up" id="genusFeaturedContent">
               <span 
                 className="badge text-uppercase fw-bold px-3 py-2 rounded-pill mb-3"
                 style={{ 
@@ -168,7 +168,7 @@ export default function Brands() {
             </div>
 
             {/* Right Image Column */}
-            <div className="col-lg-5 col-12" id="genusFeaturedImageCol">
+            <div className="col-lg-5 col-12 animate-on-scroll fade-scale stagger-1" id="genusFeaturedImageCol">
               <div 
                 className="position-relative overflow-hidden rounded-4 shadow-lg border"
                 style={{ 

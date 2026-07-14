@@ -12,7 +12,7 @@ export default function WhyUs() {
         <div className="container">
           <div className="row align-items-center">
             {/* Left Visual Image/Mockup */}
-            <div className="col-lg-6 col-md-12 reveal-on-scroll revealed" id="whyUsVisualWrap">
+            <div className="col-lg-6 col-md-12 animate-on-scroll fade-scale" id="whyUsVisualWrap">
               <div className="why-image-wrapper">
                 <img 
                   src={whyUsImg} 
@@ -38,7 +38,7 @@ export default function WhyUs() {
             </div>
             
             {/* Right Content */}
-            <div className="col-lg-6 col-md-12 ps-lg-5 mt-5 mt-lg-0 reveal-on-scroll revealed stagger-1" id="whyUsTextWrap">
+            <div className="col-lg-6 col-md-12 ps-lg-5 mt-5 mt-lg-0 animate-on-scroll fade-up stagger-1" id="whyUsTextWrap">
               <span className="section-subtitle">{t.whyUs.subtitle}</span>
               <h1 className="section-title mb-4" id="whyUsHeader">{t.whyUs.title}</h1>
               <p className="mb-5" id="whyUsOverviewText">
@@ -46,9 +46,9 @@ export default function WhyUs() {
               </p>
               
               {/* Feature Lists */}
-              <div className="why-list" id="whyReasonsList">
+              <div className="why-list stagger-group" id="whyReasonsList">
                 {/* Reason 1 */}
-                <div className="why-item" id="whyReasonTech">
+                <div className="why-item animate-on-scroll fade-up" id="whyReasonTech">
                   <div className="why-item-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Users size={20} />
                   </div>
@@ -58,7 +58,7 @@ export default function WhyUs() {
                   </div>
                 </div>
                 {/* Reason 2 */}
-                <div className="why-item" id="whyReasonPrice">
+                <div className="why-item animate-on-scroll fade-up" id="whyReasonPrice">
                   <div className="why-item-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Tag size={20} />
                   </div>
@@ -68,7 +68,7 @@ export default function WhyUs() {
                   </div>
                 </div>
                 {/* Reason 3 */}
-                <div className="why-item" id="whyReasonSpeed">
+                <div className="why-item animate-on-scroll fade-up" id="whyReasonSpeed">
                   <div className="why-item-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Clock size={20} />
                   </div>

@@ -58,7 +58,7 @@ export default function FAQ() {
     <PageTransition>
       <section id="faq" className="faq-section section-padding" style={{ paddingTop: '140px', minHeight: '80vh' }}>
         <div className="container">
-          <div className="section-title-container text-center reveal-on-scroll revealed" id="faqTitleWrap">
+          <div className="section-title-container text-center animate-on-scroll fade-up" id="faqTitleWrap">
             <span className="section-subtitle">{t.faq.subtitle}</span>
             <h1 className="section-title" id="faqHeader">{t.faq.title}</h1>
             <p className="section-description mx-auto" id="faqSubtext">
@@ -68,13 +68,13 @@ export default function FAQ() {
           
           <div className="row justify-content-center" id="faqAccordionWrap">
             <div className="col-lg-8">
-              <div className="accordion faq-accordion" id="faqAccordion">
+              <div className="accordion faq-accordion stagger-group" id="faqAccordion">
                 {faqItems.map((item, index) => {
                   const isOpen = activeIndex === index;
                   return (
                     <div 
                       key={item.id} 
-                      className="accordion-item reveal-on-scroll revealed" 
+                      className="accordion-item animate-on-scroll fade-up" 
                       id={`faqItem${item.id}`}
                     >
                       <h2 className="accordion-header">
@@ -98,11 +98,7 @@ export default function FAQ() {
                         </button>
                       </h2>
                       <div 
-                        className={`accordion-collapse collapse ${isOpen ? 'show' : ''}`}
-                        style={{ 
-                          display: isOpen ? 'block' : 'none',
-                          transition: 'all 0.3s ease',
-                        }}
+                        className={`accordion-collapse collapse-smooth ${isOpen ? 'show' : ''}`}
                       >
                         <div className="accordion-body">
                           {item.answer}

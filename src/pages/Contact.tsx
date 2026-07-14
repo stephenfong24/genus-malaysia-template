@@ -16,7 +16,7 @@ export default function Contact() {
         <div className="container">
           <div className="row g-4 align-items-stretch">
             {/* Left: Corporate Information Card */}
-            <div className="col-lg-6 col-md-12 reveal-on-scroll revealed" id="contactInfoColumn">
+            <div className="col-lg-6 col-md-12 animate-on-scroll fade-up" id="contactInfoColumn">
               <div className="contact-info-card d-flex flex-column justify-content-between h-100">
                 <div>
                   <h1 className="contact-info-title">{t.contact.infoTitle}</h1>
@@ -82,7 +82,7 @@ export default function Contact() {
             </div>
             
             {/* Right: Redesigned Map and Navigation Card */}
-            <div className="col-lg-6 col-md-12 reveal-on-scroll revealed stagger-1" id="contactMapColumn">
+            <div className="col-lg-6 col-md-12 animate-on-scroll fade-up stagger-1" id="contactMapColumn">
               <div className="contact-info-card d-flex flex-column justify-content-between h-100">
                 <div>
                   <h3 className="contact-info-title">{t.contact.locationTitle}</h3>

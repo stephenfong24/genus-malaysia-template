@@ -18,7 +18,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="premium-footer">
+    <footer className="premium-footer animate-on-scroll fade-up">
       <div className="container">
         <div className="row g-4">
           {/* Column 1 - Brand Info */}
