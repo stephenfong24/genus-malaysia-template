@@ -258,8 +258,9 @@
     }
 
     .hero-visual-container {
-        min-height: 350px;
-        margin-top: -1.5rem;
+        min-height: 390px;
+        margin-top: -2.4rem;
+        align-items: flex-start;
     }
 
     .hero-section::before {
@@ -286,39 +287,44 @@
     }
 
     .glow-backdrop {
-        width: 360px;
-        height: 360px;
-        filter: blur(14px);
+        width: 330px;
+        height: 330px;
+        top: 57%;
+        left: 50%;
+        filter: blur(13px);
     }
 
     .hero-battery-stage {
-        width: min(96%, 360px);
-        margin-top: 18px;
+        width: min(86%, 320px);
+        margin-top: 30px;
     }
 
     .hero-lightning-rear {
-        top: 40%;
-        left: -34%;
-        width: 172%;
-        opacity: 0.82;
+        top: 35%;
+        left: 50%;
+        width: 132%;
+        opacity: 0.66;
+        transform: translateX(-50%);
     }
 
     .hero-lightning-front {
         top: auto;
-        bottom: 12%;
-        left: -30%;
-        width: 164%;
-        opacity: 0.78;
+        bottom: 6%;
+        left: 50%;
+        width: 128%;
+        opacity: 0.82;
+        transform: translateX(-50%);
     }
 
     .hero-energy-platform {
-        bottom: 5%;
-        width: 124%;
+        bottom: 9%;
+        width: 98%;
     }
 
     .hero-particles {
-        width: 132%;
-        opacity: 0.58;
+        inset: 7% -6% auto auto;
+        width: 114%;
+        opacity: 0.5;
     }
     
     .stats-card-container {
