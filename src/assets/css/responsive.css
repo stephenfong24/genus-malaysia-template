@@ -100,8 +100,9 @@
     }
 
     .hero-lightning-rear {
-        left: -10%;
-        width: 118%;
+        top: 29%;
+        left: -22%;
+        width: 142%;
     }
 
     .hero-energy-platform {
@@ -286,17 +287,17 @@
     }
 
     .hero-lightning-rear {
-        top: 38%;
-        left: -20%;
-        width: 136%;
-        opacity: 0.48;
+        top: 34%;
+        left: -36%;
+        width: 168%;
+        opacity: 0.78;
     }
 
     .hero-lightning-front {
-        bottom: 19%;
-        left: -18%;
-        width: 134%;
-        opacity: 0.5;
+        bottom: 14%;
+        left: -34%;
+        width: 164%;
+        opacity: 0.76;
     }
 
     .hero-energy-platform {
