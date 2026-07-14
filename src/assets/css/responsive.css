@@ -289,18 +289,18 @@
     .glow-backdrop {
         width: 330px;
         height: 330px;
-        top: 57%;
+        top: 61%;
         left: 50%;
         filter: blur(13px);
     }
 
     .hero-battery-stage {
         width: min(86%, 320px);
-        margin-top: 30px;
+        margin-top: 68px;
     }
 
     .hero-lightning-rear {
-        top: 35%;
+        top: 43%;
         left: 50%;
         width: 132%;
         opacity: 0.66;
