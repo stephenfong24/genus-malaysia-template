@@ -25,7 +25,7 @@ export const translations = {
       office: 'Office: +603-8962 2111',
       whatsapp: 'WhatsApp: +60 16-262 7528',
       hours: 'Mon-Fri: 9am-6pm | Sat: 9am-1pm',
-      rights: '© 2026 GENUS MALAYSIA SDN BHD (1290354-T). All Rights Reserved.',
+      rights: '© 2026 GENUS MALAYSIA SDN BHD. All Rights Reserved.',
       tagline: "Powering Malaysia's Roadways with Excellence.",
     },
     home: {
@@ -202,7 +202,7 @@ export const translations = {
       office: '办公室：+603-8962 2111',
       whatsapp: 'WhatsApp：+60 16-262 7528',
       hours: '周一至周五：9am-6pm | 周六：9am-1pm',
-      rights: '© 2026 GENUS MALAYSIA SDN BHD (1290354-T)。版权所有。',
+      rights: '© 2026 GENUS MALAYSIA SDN BHD。版权所有。',
       tagline: '以卓越动力驱动马来西亚道路。',
     },
     home: {
