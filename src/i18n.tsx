@@ -157,7 +157,7 @@ export const translations = {
       sunday: 'Sun: Closed',
       locationTitle: 'Headquarters Location',
       locationDesc: 'Our main warehouse and showroom is strategically situated in Balakong, allowing convenient distribution across Selangor and Kuala Lumpur.',
-      openMaps: 'Open in Google Maps App',
+      openMaps: 'Open in Google Maps',
     },
     login: {
       badge: 'Coming Soon',
@@ -334,7 +334,7 @@ export const translations = {
       sunday: '周日：休息',
       locationTitle: '总部位置',
       locationDesc: '我们的主要仓库与展示厅位于 Balakong，方便覆盖雪兰莪与吉隆坡的配送。',
-      openMaps: '在 Google Maps App 打开',
+      openMaps: '在 Google Maps 打开',
     },
     login: {
       badge: '即将推出',
