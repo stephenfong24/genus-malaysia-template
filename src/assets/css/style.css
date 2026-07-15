@@ -2482,6 +2482,10 @@ textarea.form-control-custom:not(:placeholder-shown) ~ .form-label-custom {
     box-shadow: var(--shadow-premium);
 }
 
+#whyReasonsList .why-item:hover {
+    box-shadow: none;
+}
+
 .collapse-smooth {
     display: grid;
     grid-template-rows: 0fr;
