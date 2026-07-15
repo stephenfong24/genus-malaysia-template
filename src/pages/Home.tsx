@@ -274,7 +274,7 @@ export default function Home() {
                 <img className="hero-visual-layer hero-particles" src="/assets/images/home/battery-particles.svg" alt="" aria-hidden="true" loading="lazy" />
                 <div className="hero-battery-stage">
                   <img 
-                    src="/assets/images/home/genus-battery-cutout.png"
+                    src="/assets/images/home/genus-battery-hero-new.png"
                     alt="GENUS Calcium-Silver Technology car battery"
                     className="hero-battery-art"
                     id="batteryIllustrationSvg"
