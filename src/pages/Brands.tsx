@@ -6,10 +6,11 @@ import {
   Bus,
   Car,
   CheckCircle2,
+  Globe2,
+  MapPin,
   ShieldCheck,
   Sparkles,
   Sun,
-  Truck,
   TimerReset,
   Zap
 } from 'lucide-react';
@@ -26,34 +27,32 @@ interface Brand {
 
 export default function Brands() {
   const { t } = useLanguage();
-  const whyChooseIcons = [Zap, Sun, TimerReset, Sparkles, BadgeCheck, ShieldCheck];
-  const productRangeIcons = [Car, Bus, Truck, BriefcaseBusiness];
-  const genusShowcaseImages = [
-    {
-      src: "/assets/brand/genus-efb-60b19l-cutout.png",
-      alt: "Genus EFB premium SMF battery",
-      label: "EFB Series",
-      className: "genus-showcase-main genus-showcase-product"
-    },
-    {
-      src: "/assets/brand/genus-smf-60b24rs-cutout.png",
-      alt: "Genus premium SMF 60B24RS battery",
-      label: "SMF 60B24RS",
-      className: "genus-showcase-wide genus-showcase-product"
-    },
-    {
-      src: "/assets/brand/genus-agm-ln3-h6.jpeg",
-      alt: "Genus start stop AGM battery",
-      label: "AGM Start Stop",
-      className: "genus-showcase-tile"
-    },
-    {
-      src: "/assets/brand/genus-afb-technology.jpeg",
-      alt: "Genus AFB maintenance free battery",
-      label: "AFB Technology",
-      className: "genus-showcase-tile"
-    }
+  const genusBenefits = t.brands.features.map(([title, description], index) => ({
+    title,
+    description,
+    Icon: [Zap, ShieldCheck, BatteryCharging][index] ?? CheckCircle2
+  }));
+  const genusWhyChooseIcons = [Zap, Sun, TimerReset, Sparkles, BadgeCheck, ShieldCheck];
+  const genusRangeIcons = [Car, Bus, BatteryCharging, BriefcaseBusiness];
+  const genusProductImages = [
+    "/assets/images/home/genus-featured-brand/genus-efb-series.png",
+    "/assets/images/home/genus-featured-brand/genus-smf-60b24rs.png",
+    "/assets/images/home/genus-featured-brand/genus-agm-start-stop.png",
+    "/assets/images/home/genus-featured-brand/genus-afb-technology.png"
   ];
+  const genusProducts = t.brands.featuredProducts.map(([accent, rest, description, alt], index) => ({
+    accent,
+    rest,
+    description,
+    alt,
+    image: genusProductImages[index]
+  }));
+  const genusTrustIcons = [MapPin, ShieldCheck, Globe2, CheckCircle2];
+  const genusTrustItems = t.brands.trustItems.map(([title, description], index) => ({
+    Icon: genusTrustIcons[index] ?? CheckCircle2,
+    title,
+    description
+  }));
 
   const brandsList: Brand[] = [
     {
@@ -134,52 +133,50 @@ export default function Brands() {
         </div>
       </section>
 
-      {/* NEW SECTION: GENUS BATTERIES */}
+      {/* FEATURED BRAND: GENUS BATTERIES */}
       <section 
         id="genus-featured" 
-        className="genus-featured-section section-padding" 
-        style={{ 
-          background: 'radial-gradient(circle at 10% 90%, var(--color-secondary) 0%, var(--color-primary) 100%)', 
-          paddingTop: '80px', 
-          paddingBottom: '100px',
-          borderTop: '1px solid var(--color-accent-dim, rgba(251, 191, 36, 0.1))',
-          borderBottom: '1px solid var(--color-accent-dim, rgba(251, 191, 36, 0.1))'
-        }}
+        className="genus-featured-section" 
       >
-        <div className="container">
-          <div className="row align-items-center g-5">
-            {/* Left Content Column */}
-            <div className="col-lg-7 col-12 text-white animate-on-scroll fade-up" id="genusFeaturedContent">
-              <span 
-                className="badge text-uppercase fw-bold px-3 py-2 rounded-pill mb-3"
-                style={{ 
-                  backgroundColor: 'var(--color-accent-dim, rgba(251, 191, 36, 0.1))', 
-                  color: 'var(--color-accent, #FBBF24)', 
-                  fontSize: '0.75rem',
-                  letterSpacing: '1px',
-                  border: '1px solid var(--color-accent-dim-strong, rgba(251, 191, 36, 0.2))'
-                }}
-              >
-                {t.brands.featured}
-              </span>
-              <h2 className="fw-extrabold mb-4 font-sans tracking-tight text-white" style={{ fontSize: '2.5rem' }}>
-                {t.brands.genusTitle}
+        <picture className="genus-featured-bg" aria-hidden="true">
+          <source srcSet="/assets/images/home/genus-featured-brand/genus-hero-background.webp" type="image/webp" />
+          <img src="/assets/images/home/genus-featured-brand/genus-hero-background.jpg" alt="" loading="lazy" decoding="async" />
+        </picture>
+        <img
+          className="genus-featured-lightning"
+          src="/assets/images/home/genus-featured-brand/lightning-accent.png"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="genus-featured-shell">
+          <div className="genus-featured-main animate-on-scroll fade-up" id="genusFeaturedContent">
+            <div className="genus-featured-copy">
+              <span className="genus-featured-badge">{t.brands.featured}</span>
+              <h2 className="genus-featured-title">
+                {t.brands.featuredTitleLines.map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
               </h2>
-              
-              <p className="mb-3 font-sans opacity-90" style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--color-gray-200)' }}>
-                {t.brands.paragraph1}
-              </p>
-              
-              <p className="mb-4 font-sans opacity-90" style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--color-gray-200)' }}>
-                {t.brands.paragraph2}
+              <p className="genus-featured-tagline">
+                <Zap size={18} aria-hidden="true" />
+                {t.brands.featuredTagline}
               </p>
 
-              <div className="genus-core-features" aria-label="Genus battery core features">
-                {t.brands.features.map(([title, description]) => (
-                  <div className="genus-core-feature" key={title}>
-                    <CheckCircle2 size={20} />
+              <div className="genus-featured-text">
+                <p>{t.brands.paragraph1}</p>
+                <p>{t.brands.paragraph2Featured}</p>
+              </div>
+
+              <div className="genus-featured-benefits" aria-label="Genus battery core features">
+                {genusBenefits.map(({ title, description, Icon }) => (
+                  <div className="genus-featured-benefit" key={title}>
+                    <div className="genus-featured-benefit-icon">
+                      <Icon size={26} aria-hidden="true" />
+                    </div>
                     <div>
-                      <h5>{title}</h5>
+                      <h3>{title}</h3>
                       <p>{description}</p>
                     </div>
                   </div>
@@ -187,36 +184,55 @@ export default function Brands() {
               </div>
             </div>
 
-            {/* Right Image Column */}
-            <div className="col-lg-5 col-12 animate-on-scroll fade-scale stagger-1" id="genusFeaturedImageCol">
-              <div className="genus-showcase" aria-label="Genus battery product showcase">
-                {genusShowcaseImages.map((image) => (
-                  <figure className={`genus-showcase-card ${image.className}`} key={image.src}>
-                    <img src={image.src} alt={image.alt} loading="lazy" />
-                    <figcaption>{image.label}</figcaption>
-                  </figure>
-                ))}
-              </div>
+            <div className="genus-featured-products stagger-group" id="genusFeaturedProducts" aria-label="Genus battery product showcase">
+              {genusProducts.map((product) => (
+                <article className="genus-featured-product-card animate-on-scroll fade-up" key={`${product.accent}-${product.rest}`}>
+                  <div className="genus-featured-product-image">
+                    <img src={product.image} alt={product.alt} loading="lazy" decoding="async" />
+                  </div>
+                  <div className="genus-featured-product-copy">
+                    <h3>
+                      <span>{product.accent}</span> {product.rest}
+                    </h3>
+                    <p>{product.description}</p>
+                    <div className="genus-featured-product-rule" aria-hidden="true"></div>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
 
-          <div className="genus-why-panel animate-on-scroll fade-up" id="genusWhyChoose">
-            <div className="genus-why-header">
-              <div className="genus-why-kicker">
-                <BatteryCharging size={18} />
-                <span>{t.brands.whyChooseTitle}</span>
+          <div className="genus-featured-trust-bar animate-on-scroll fade-up" id="genusFeaturedTrust">
+            {genusTrustItems.map(({ Icon, title, description }) => (
+              <div className="genus-featured-trust-item" key={title}>
+                <div className="genus-featured-trust-icon">
+                  <Icon size={32} aria-hidden="true" />
+                </div>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="genus-featured-proof animate-on-scroll fade-up" id="genusFeaturedWhyChoose">
+            <div className="genus-featured-proof-header">
+              <div className="genus-featured-proof-kicker">
+                <BatteryCharging size={20} aria-hidden="true" />
+                <h2>{t.brands.whyChooseTitle}</h2>
               </div>
               <p>{t.brands.whyChooseIntro}</p>
             </div>
 
-            <div className="genus-why-grid">
+            <div className="genus-featured-proof-grid stagger-group">
               {t.brands.whyChooseItems.map(([title, description], index) => {
-                const Icon = whyChooseIcons[index] ?? CheckCircle2;
+                const Icon = genusWhyChooseIcons[index] ?? CheckCircle2;
 
                 return (
-                  <article className="genus-why-card" key={title}>
-                    <div className="genus-why-icon">
-                      <Icon size={22} />
+                  <article className="genus-featured-proof-card animate-on-scroll fade-up" key={title}>
+                    <div className="genus-featured-proof-icon">
+                      <Icon size={22} aria-hidden="true" />
                     </div>
                     <div>
                       <h3>{title}</h3>
@@ -228,21 +244,21 @@ export default function Brands() {
             </div>
           </div>
 
-          <div className="genus-product-range animate-on-scroll fade-up" id="genusProductRange">
-            <div className="genus-product-copy">
-              <span className="genus-product-eyebrow">{t.brands.productRangeEyebrow}</span>
+          <div className="genus-featured-range animate-on-scroll fade-up" id="genusFeaturedProductRange">
+            <div className="genus-featured-range-header">
+              <span>{t.brands.productRangeEyebrow}</span>
               <h2>{t.brands.productRangeTitle}</h2>
               <p>{t.brands.productRangeIntro}</p>
             </div>
 
-            <div className="genus-product-grid">
+            <div className="genus-featured-range-grid stagger-group">
               {t.brands.productRangeItems.map(([title, description], index) => {
-                const Icon = productRangeIcons[index] ?? BatteryCharging;
+                const Icon = genusRangeIcons[index] ?? BatteryCharging;
 
                 return (
-                  <article className="genus-product-card" key={title}>
-                    <div className="genus-product-icon">
-                      <Icon size={24} />
+                  <article className="genus-featured-range-card animate-on-scroll fade-up" key={title}>
+                    <div className="genus-featured-range-icon">
+                      <Icon size={22} aria-hidden="true" />
                     </div>
                     <h3>{title}</h3>
                     <p>{description}</p>
@@ -251,8 +267,8 @@ export default function Brands() {
               })}
             </div>
 
-            <div className="genus-product-closing">
-              <BatteryCharging size={20} />
+            <div className="genus-featured-range-closing">
+              <BatteryCharging size={18} aria-hidden="true" />
               <p>{t.brands.productRangeClosing}</p>
             </div>
           </div>
