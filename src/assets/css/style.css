@@ -2889,18 +2889,23 @@ body.theme-gray #preloader {
 
 /* --- Floating Theme Switcher Widget --- */
 .theme-switcher-container {
+    --theme-panel-width: clamp(220px, calc(100vw - 64px), 300px);
     position: fixed;
     right: 0;
     top: 45%;
     transform: translateY(-50%);
     z-index: 10001;
-    display: flex;
-    align-items: center;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    width: calc(var(--theme-panel-width) + 48px);
+    height: 48px;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
 }
 
 .theme-switcher-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     background-color: var(--color-primary);
     color: var(--color-accent);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2913,9 +2918,16 @@ body.theme-gray #preloader {
     justify-content: center;
     cursor: pointer;
     box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.3);
-    transition: var(--transition-fast);
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 2;
     pointer-events: auto;
+}
+
+.theme-switcher-container.open .theme-switcher-btn {
+    right: var(--theme-panel-width);
 }
 
 .theme-switcher-btn:hover {
@@ -2927,14 +2939,14 @@ body.theme-gray #preloader {
     background-color: var(--color-primary);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px 0 0 16px;
-    width: 220px;
+    width: var(--theme-panel-width);
     padding: 1.25rem;
     box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     gap: 1rem;
     position: absolute;
-    right: 47px;
+    right: 0;
     top: 50%;
     opacity: 0;
     visibility: hidden;
