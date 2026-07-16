@@ -150,7 +150,7 @@ export default function Header() {
                 {t.nav.contact}
               </NavLink>
             </li>
-            <li className="nav-item ms-lg-3 mt-3 mt-lg-0 d-none">
+            <li className="nav-item ms-lg-3 mt-3 mt-lg-0">
               <div className="language-dropdown" ref={languageRef}>
                 <button
                   id="languageSelect"

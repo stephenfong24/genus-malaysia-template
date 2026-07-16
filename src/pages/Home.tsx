@@ -72,19 +72,19 @@ const servicesList = [
     id: "serviceCardDelivery",
     icon: <Truck size={24} className="text-warning" />,
     title: "Expert Battery Delivery",
-    desc: "Fast, reliable dispatch and delivery of premium car batteries directly to your workshop, home, or office during standard business hours."
+    desc: "Fast, reliable battery dispatch to workshops, dealers, fleets, retailers, and business locations during standard business hours."
   },
   {
     id: "serviceCardInstallation",
     icon: <Wrench size={24} className="text-warning" />,
-    title: "Onsite Installation",
-    desc: "Precision onsite installation conducted by certified battery experts following manufacturer specifications for ultimate safety."
+    title: "Installation Support",
+    desc: "Installation support available for selected customers and vehicles, carried out by trained battery technicians."
   },
   {
     id: "serviceCardHealthCheck",
     icon: <Activity size={24} className="text-warning" />,
     title: "Battery Diagnostics",
-    desc: "Comprehensive battery, alternator, and starter diagnostics using professional digital testers to verify health metrics."
+    desc: "Battery testing and diagnostic support available to help workshops and customers confirm battery condition and charging performance."
   },
   {
     id: "serviceCardRoadside",
@@ -106,7 +106,7 @@ const steps = [
     id: "step1",
     icon: <Phone size={20} className="me-2 d-inline-block align-middle" />,
     title: "Step 1: Inquiry & Quote",
-    desc: "Submit our digital form or send a WhatsApp message with your battery requirements or vehicle model. We reply immediately with competitive distributor pricing."
+    desc: "Send your battery requirements, vehicle application, or order quantity through our enquiry form or WhatsApp. We reply with competitive distributor pricing."
   },
   {
     num: 2,
@@ -120,14 +120,14 @@ const steps = [
     id: "step3",
     icon: <Truck size={20} className="me-2 d-inline-block align-middle" />,
     title: "Step 3: Delivery Dispatch",
-    desc: "We arrange prompt delivery directly to your home, office, or workshop within our standard business hours."
+    desc: "We arrange prompt delivery to your workshop, dealership, fleet location, retail outlet, or business address within our standard business hours."
   },
   {
     num: 4,
     id: "step4",
     icon: <Wrench size={20} className="me-2 d-inline-block align-middle" />,
-    title: "Step 4: Expert Installation",
-    desc: "Our skilled technicians perform a clean and safe installation on-site, including a diagnostic check of your vehicle's alternator charging system."
+    title: "Step 4: Installation Support",
+    desc: "Where installation support is required, our trained technicians can assist with safe battery fitting and basic charging-system checks."
   },
   {
     num: 5,
@@ -161,12 +161,12 @@ export default function Home() {
   }));
 
   const featuredBrandFeatures = [
-    { title: featuredBrand.features.powerfulStarting, Icon: Zap },
-    { title: featuredBrand.features.maintenanceFree, Icon: CheckCircle2 },
-    { title: featuredBrand.features.calciumSilverTechnology, Icon: BatteryCharging },
-    { title: featuredBrand.features.highHeatResistance, Icon: ThermometerSun },
-    { title: featuredBrand.features.nationwideWarranty, Icon: ShieldCheck },
-    { title: featuredBrand.features.longerServiceLife, Icon: Gauge },
+    { id: 'powerful-starting', title: featuredBrand.features.powerfulStarting, Icon: Zap },
+    { id: 'maintenance-free', title: featuredBrand.features.maintenanceFree, Icon: CheckCircle2 },
+    { id: 'calcium-silver-technology', title: featuredBrand.features.calciumSilverTechnology, Icon: BatteryCharging },
+    { id: 'high-heat-resistance', title: featuredBrand.features.highHeatResistance, Icon: ThermometerSun },
+    { id: 'nationwide-warranty', title: featuredBrand.features.nationwideWarranty, Icon: ShieldCheck },
+    { id: 'longer-service-life', title: featuredBrand.features.longerServiceLife, Icon: Gauge },
   ];
 
   return (
@@ -344,8 +344,8 @@ export default function Home() {
 
           <div className="home-featured-brand-showcase animate-on-scroll fade-up stagger-1" id="featuredBrandShowcase">
             <div className="home-featured-brand-feature-list home-featured-brand-feature-list-left stagger-group">
-              {featuredBrandFeatures.slice(0, 3).map(({ title, Icon }) => (
-                <div className="home-featured-brand-feature animate-on-scroll fade-up" key={title}>
+              {featuredBrandFeatures.slice(0, 3).map(({ id, title, Icon }) => (
+                <div className="home-featured-brand-feature animate-on-scroll fade-up" key={id}>
                   <span className="home-featured-brand-feature-icon">
                     <Icon size={22} aria-hidden="true" />
                   </span>
@@ -362,8 +362,8 @@ export default function Home() {
             </div>
 
             <div className="home-featured-brand-feature-list home-featured-brand-feature-list-right stagger-group">
-              {featuredBrandFeatures.slice(3).map(({ title, Icon }) => (
-                <div className="home-featured-brand-feature animate-on-scroll fade-up" key={title}>
+              {featuredBrandFeatures.slice(3).map(({ id, title, Icon }) => (
+                <div className="home-featured-brand-feature animate-on-scroll fade-up" key={id}>
                   <span className="home-featured-brand-feature-icon">
                     <Icon size={22} aria-hidden="true" />
                   </span>
@@ -374,8 +374,8 @@ export default function Home() {
           </div>
 
           <div className="home-featured-brand-feature-grid stagger-group" aria-label={featuredBrand.labels.features}>
-            {featuredBrandFeatures.map(({ title, Icon }) => (
-              <div className="home-featured-brand-feature animate-on-scroll fade-up" key={title}>
+            {featuredBrandFeatures.map(({ id, title, Icon }) => (
+              <div className="home-featured-brand-feature animate-on-scroll fade-up" key={id}>
                 <span className="home-featured-brand-feature-icon">
                   <Icon size={22} aria-hidden="true" />
                 </span>

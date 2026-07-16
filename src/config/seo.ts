@@ -41,33 +41,33 @@ const defaultRobots = 'index, follow, max-image-preview:large, max-snippet:-1, m
 export const routeSeo: Record<string, RouteSeo> = {
   '/': {
     path: '/',
-    title: 'Trusted Car Battery Wholesaler & Experts | GENUS MALAYSIA SDN BHD',
+    title: 'Trusted Automotive Battery Wholesaler | GENUS MALAYSIA SDN BHD',
     description:
-      'GENUS MALAYSIA SDN BHD is a trusted car battery wholesaler and expert in Malaysia, supplying Genus, K-Viron and premium automotive batteries with delivery, installation and warranty support.',
+      'GENUS MALAYSIA SDN BHD is a trusted car battery wholesaler in Malaysia, supplying Genus, K-Viron and premium automotive batteries for dealers, workshops, fleets and retailers, with delivery, warranty and installation support available.',
     keywords: [
       'car battery wholesaler Malaysia',
-      'car battery expert Malaysia',
+      'automotive battery supplier Malaysia',
       'Genus battery Malaysia',
       'K-Viron battery',
       'automotive battery supplier',
-      'battery delivery Malaysia',
+      'battery wholesale delivery Malaysia',
       'Balakong battery supplier',
     ],
-    imageAlt: 'GENUS MALAYSIA car battery experts and wholesale battery service',
+    imageAlt: 'GENUS MALAYSIA automotive battery wholesale supply and support',
   },
   '/why-us': {
     path: '/why-us',
     title: 'Why Choose GENUS | GENUS MALAYSIA SDN BHD',
     description:
-      'Learn why Malaysian workshops and drivers choose GENUS MALAYSIA for professional technicians, transparent pricing and reliable wholesale battery supply.',
+      'Learn why Malaysian dealers, workshops, fleets and retailers choose GENUS MALAYSIA for reliable wholesale battery supply, dealer pricing and product support.',
     keywords: [
       'why choose Genus Malaysia',
-      'professional car battery technicians',
-      'transparent battery pricing',
+      'automotive battery dealer supplier',
+      'wholesale battery pricing',
       'battery wholesaler Selangor',
       'reliable battery supply Malaysia',
     ],
-    imageAlt: 'GENUS MALAYSIA professional battery support in Malaysia',
+    imageAlt: 'GENUS MALAYSIA wholesale battery supply support in Malaysia',
   },
   '/brands': {
     path: '/brands',
@@ -88,15 +88,15 @@ export const routeSeo: Record<string, RouteSeo> = {
     path: '/faq',
     title: 'Car Battery FAQ | GENUS MALAYSIA SDN BHD',
     description:
-      'Find answers about battery delivery, installation, warranty coverage, operating hours and available car battery brands from GENUS MALAYSIA.',
+      'Find answers about wholesale battery supply, delivery support, installation assistance, warranty coverage, operating hours and available car battery brands from GENUS MALAYSIA.',
     keywords: [
       'car battery FAQ',
       'battery warranty Malaysia',
-      'battery delivery questions',
-      'car battery installation FAQ',
+      'wholesale battery delivery questions',
+      'car battery installation support FAQ',
       'Genus Malaysia support',
     ],
-    imageAlt: 'GENUS MALAYSIA battery warranty and delivery FAQ',
+    imageAlt: 'GENUS MALAYSIA wholesale battery supply and warranty FAQ',
   },
   '/contact': {
     path: '/contact',

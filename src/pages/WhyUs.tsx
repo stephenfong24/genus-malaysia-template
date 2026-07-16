@@ -16,7 +16,7 @@ export default function WhyUs() {
               <div className="why-image-wrapper">
                 <img 
                   src={whyUsImg} 
-                  alt="Professional Automotive technician changing car battery on-site in Malaysia" 
+                  alt={t.whyUs.imageAlt} 
                   className="why-img" 
                   id="whyUsContextImage"
                 />

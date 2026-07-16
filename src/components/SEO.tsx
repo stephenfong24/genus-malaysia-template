@@ -173,7 +173,7 @@ function buildStructuredData(route: RouteSeo, canonical: string, imageUrl: strin
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Car battery delivery and installation',
+              name: 'Car battery delivery and installation support',
             },
           },
           {

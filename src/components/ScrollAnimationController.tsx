@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useLanguage } from '../i18n';
 
 const ANIMATION_SELECTOR = '.animate-on-scroll, .reveal-on-scroll';
 
 export default function ScrollAnimationController() {
   const location = useLocation();
+  const { language } = useLanguage();
 
   useEffect(() => {
     const root = document.documentElement;
@@ -43,7 +45,7 @@ export default function ScrollAnimationController() {
     return () => {
       observer.disconnect();
     };
-  }, [location.pathname]);
+  }, [location.pathname, language]);
 
   return null;
 }
