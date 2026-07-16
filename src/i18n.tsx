@@ -51,14 +51,57 @@ export const translations = {
         ['Genus & K-Viron Lines', 'We specialise in high-performance Genus and K-viron car batteries with calcium-silver technology & EFB Glass mat technology.'],
         ['Official Factory Warranty', 'Full factory warranty support ranging from 12 to 18 months, backed by our robust wholesaler replacement commitment.'],
       ],
-      testimonialsSubtitle: 'Customer Stories',
-      testimonialsTitle: 'What Malaysian Drivers Say',
-      testimonialsDesc: 'Read real, high-trust reviews from drivers and commercial workshops who have experienced our premium battery distribution and expert supply services.',
-      testimonials: [
-        ['Suresh Kumar', 'Petaling Jaya, Selangor', 'My car battery died completely at my condominium parking lot in PJ. Called Genus, and their mobile technician arrived in just 25 minutes! Extremely professional service, did a free starter health test, and replaced it cleanly. 10/10!'],
-        ['Sarah Ahmad', 'KLCC, Kuala Lumpur', 'The level of professionalism was stellar. There were no hidden fees. The price they quoted over the WhatsApp message was exactly what I paid. He even showed me how to read the official warranty slip. Highly recommended.'],
-        ['Marcus Tan', 'Workshop Owner, Subang Jaya', 'As a workshop owner, finding a reliable car battery wholesaler is crucial. Genus Malaysia supplies us with top-tier Genus and K-viron batteries on time. Their calcium-silver technology is highly requested by our clients for its incredible longevity!'],
-      ],
+      featuredBrand: {
+        eyebrow: 'Featured Brand',
+        title: 'Genus Batteries',
+        subtitle: 'Powering Performance. Delivering Reliability.',
+        features: {
+          powerfulStarting: 'Reliable Starting',
+          maintenanceFree: 'Maintenance Free',
+          longerServiceLife: 'Longer Service Life',
+          calciumSilverTechnology: 'Calcium-Silver Technology',
+          nationwideWarranty: 'Nationwide Warranty',
+          highHeatResistance: 'High Temperature Performance',
+        },
+        benefits: {
+          reliableStartingPower: {
+            title: 'Reliable Starting Power',
+            description: 'Strong cranking performance for dependable engine starts.',
+          },
+          calciumSilverTechnology: {
+            title: 'Calcium-Silver Technology',
+            description: 'Improves corrosion resistance and battery durability.',
+          },
+          maintenanceFree: {
+            title: 'Maintenance Free',
+            description: 'No routine electrolyte topping required under normal use.',
+          },
+          highTemperaturePerformance: {
+            title: 'High Temperature Performance',
+            description: "Designed for Malaysia's tropical climate.",
+          },
+          vibrationResistant: {
+            title: 'Vibration Resistant',
+            description: 'Built for everyday road conditions.',
+          },
+          lowSelfDischarge: {
+            title: 'Low Self Discharge',
+            description: 'Retains charge during extended parking.',
+          },
+        },
+        actions: {
+          explore: 'Explore Genus Batteries',
+          contact: 'Contact Us',
+        },
+        alt: {
+          logo: 'Genus Batteries logo',
+          battery: 'Genus Calcium-Silver automotive battery',
+        },
+        labels: {
+          features: 'Genus battery feature highlights',
+          benefits: 'Genus battery benefits',
+        },
+      },
       timelineSubtitle: 'How It Works',
       timelineTitle: 'Our Simple 5-Step Supply Process',
       timelineDesc: 'Acquiring high-performance car batteries is straightforward. We make battery supply, delivery, and professional installation completely hassle-free.',
@@ -114,12 +157,6 @@ export const translations = {
         ['SMF', '60B24RS', 'High-performance maintenance-free battery for everyday reliability.', 'Genus SMF 60B24RS maintenance-free battery'],
         ['AGM', 'START STOP', 'Built for vehicles with start-stop technology for maximum efficiency.', 'Genus AGM start-stop automotive battery'],
         ['AFB', 'TECHNOLOGY', 'Advanced flooded battery technology for long-lasting performance.', 'Genus AFB technology automotive battery'],
-      ],
-      trustItems: [
-        ['LOCAL HUB', 'Serdang, Selangor'],
-        ['RELIABLE & DURABLE', 'Tropical-tested for Malaysian conditions'],
-        ['GLOBAL STANDARDS', 'Engineered with German technology expertise'],
-        ['TRUSTED PERFORMANCE', 'Powering cars, inverters and solar systems'],
       ],
       whyChooseTitle: 'Why Choose Genus Batteries',
       whyChooseIntro: 'Built for everyday confidence, harsh local conditions, and dependable long-term ownership.',
@@ -243,14 +280,57 @@ export const translations = {
         ['Genus 与 K-Viron 系列', '我们专营采用钙银技术与 EFB 玻璃纤维隔板技术的高性能 Genus 和 K-viron 汽车电池。'],
         ['官方原厂保修', '提供 12 至 18 个月原厂保修支持，并由我们的批发商更换承诺作为后盾。'],
       ],
-      testimonialsSubtitle: '客户故事',
-      testimonialsTitle: '马来西亚车主怎么说',
-      testimonialsDesc: '阅读车主与商业维修厂的真实高信任评价，了解他们对我们优质电池配送与专业供应服务的体验。',
-      testimonials: [
-        ['Suresh Kumar', '雪兰莪八打灵再也', '我的汽车电池在 PJ 公寓停车场完全没电。联系 Genus 后，移动技师 25 分钟就到了！服务非常专业，还免费检测启动系统，并干净利落地完成更换。10/10！'],
-        ['Sarah Ahmad', '吉隆坡 KLCC', '专业程度非常出色，没有隐藏费用。WhatsApp 报价是多少，我实际支付就是多少。他还教我怎么看官方保修单。强烈推荐。'],
-        ['Marcus Tan', '梳邦再也维修厂业主', '作为维修厂业主，找到可靠的汽车电池批发商非常重要。Genus Malaysia 准时供应顶级 Genus 与 K-viron 电池。客户非常喜欢他们钙银技术带来的超长寿命！'],
-      ],
+      featuredBrand: {
+        eyebrow: '精选品牌',
+        title: 'Genus 电池',
+        subtitle: '驱动性能，传递可靠。',
+        features: {
+          powerfulStarting: '强劲启动',
+          maintenanceFree: '免维护',
+          longerServiceLife: '更长服务寿命',
+          calciumSilverTechnology: '钙银技术',
+          nationwideWarranty: '全国保修支持',
+          highHeatResistance: '高温耐受表现',
+        },
+        benefits: {
+          reliableStartingPower: {
+            title: '可靠启动动力',
+            description: '强劲启动性能，支持日常发动机稳定启动。',
+          },
+          calciumSilverTechnology: {
+            title: '钙银技术',
+            description: '旨在提升抗腐蚀能力与电池耐用性。',
+          },
+          maintenanceFree: {
+            title: '免维护',
+            description: '正常使用情况下无需定期补充电解液。',
+          },
+          highTemperaturePerformance: {
+            title: '高温表现',
+            description: '专为马来西亚热带气候下的可靠表现而设计。',
+          },
+          vibrationResistant: {
+            title: '抗震设计',
+            description: '可承受日常驾驶中遇到的道路震动。',
+          },
+          lowSelfDischarge: {
+            title: '低自放电',
+            description: '车辆较长时间停放时，有助于保持电量。',
+          },
+        },
+        actions: {
+          explore: '了解 Genus 电池',
+          contact: '联系我们',
+        },
+        alt: {
+          logo: 'Genus 电池标志',
+          battery: 'Genus 钙银汽车电池',
+        },
+        labels: {
+          features: 'Genus 电池功能亮点',
+          benefits: 'Genus 电池优势',
+        },
+      },
       timelineSubtitle: '服务流程',
       timelineTitle: '简单 5 步供应流程',
       timelineDesc: '采购高性能汽车电池非常简单。我们让电池供应、配送与专业安装变得完全省心。',
@@ -306,12 +386,6 @@ export const translations = {
         ['SMF', '60B24RS', '高性能免维护电池，为日常驾驶提供可靠表现。', 'Genus SMF 60B24RS 免维护电池'],
         ['AGM', '启停系列', '专为配备启停技术的车辆打造，提升效率与稳定性。', 'Genus AGM 启停汽车电池'],
         ['AFB', '技术', '先进富液式电池技术，带来持久可靠的性能。', 'Genus AFB 技术汽车电池'],
-      ],
-      trustItems: [
-        ['本地枢纽', '雪兰莪沙登'],
-        ['可靠耐用', '针对马来西亚热带环境测试'],
-        ['国际标准', '融合德国技术专长研发'],
-        ['值得信赖的性能', '为汽车、逆变器与太阳能系统供电'],
       ],
       whyChooseTitle: '为什么选择 Genus 电池',
       whyChooseIntro: '为日常驾驶信心、本地严苛气候与长期可靠使用而打造。',

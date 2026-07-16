@@ -6,8 +6,6 @@ import {
   Bus,
   Car,
   CheckCircle2,
-  Globe2,
-  MapPin,
   ShieldCheck,
   Sparkles,
   Sun,
@@ -46,12 +44,6 @@ export default function Brands() {
     description,
     alt,
     image: genusProductImages[index]
-  }));
-  const genusTrustIcons = [MapPin, ShieldCheck, Globe2, CheckCircle2];
-  const genusTrustItems = t.brands.trustItems.map(([title, description], index) => ({
-    Icon: genusTrustIcons[index] ?? CheckCircle2,
-    title,
-    description
   }));
 
   const brandsList: Brand[] = [
@@ -200,20 +192,6 @@ export default function Brands() {
                 </article>
               ))}
             </div>
-          </div>
-
-          <div className="genus-featured-trust-bar animate-on-scroll fade-up" id="genusFeaturedTrust">
-            {genusTrustItems.map(({ Icon, title, description }) => (
-              <div className="genus-featured-trust-item" key={title}>
-                <div className="genus-featured-trust-icon">
-                  <Icon size={32} aria-hidden="true" />
-                </div>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                </div>
-              </div>
-            ))}
           </div>
 
           <div className="genus-featured-proof animate-on-scroll fade-up" id="genusFeaturedWhyChoose">

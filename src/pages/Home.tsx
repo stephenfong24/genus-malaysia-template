@@ -1,28 +1,27 @@
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   BadgeCheck, 
+  BatteryCharging,
+  CheckCircle2,
   Zap, 
+  Gauge,
   ShieldCheck, 
   UserCheck, 
   MessageCircle, 
   Package, 
   Cpu, 
-  Star,
   Phone,
   Truck,
   Wrench,
   Activity,
-  FileCheck
+  FileCheck,
+  ThermometerSun
 } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import AnimatedCounter from '../components/AnimatedCounter';
 import { useLanguage } from '../i18n';
 
 // Images
-import avatarSuresh from '../assets/images/avatar_suresh_1783577525736.jpg';
-import avatarSarah from '../assets/images/avatar_sarah_1783577539432.jpg';
-import avatarMarcus from '../assets/images/avatar_marcus_1783577553748.jpg';
-
 import galleryBmwTrunk from '../assets/images/gallery_bmw_trunk_open_1783754835718.jpg';
 import galleryBmwFront from '../assets/images/gallery_bmw_front_1783754848044.jpg';
 import galleryTwoBatteries from '../assets/images/gallery_two_batteries_1783754862487.jpg';
@@ -59,42 +58,6 @@ const galleryItems = [
     img: galleryDeliveryVan,
     title: "",
     desc: ""
-  }
-];
-
-interface Testimonial {
-  id: number;
-  name: string;
-  location: string;
-  text: string;
-  rating: number;
-  avatar: string;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "Suresh Kumar",
-    location: "Petaling Jaya, Selangor",
-    text: "My car battery died completely at my condominium parking lot in PJ. Called Genus, and their mobile technician arrived in just 25 minutes! Extremely professional service, did a free starter health test, and replaced it cleanly. 10/10!",
-    rating: 5,
-    avatar: avatarSuresh
-  },
-  {
-    id: 2,
-    name: "Sarah Ahmad",
-    location: "KLCC, Kuala Lumpur",
-    text: "The level of professionalism was stellar. There were no hidden fees. The price they quoted over the WhatsApp message was exactly what I paid. He even showed me how to read the official warranty slip. Highly recommended.",
-    rating: 5,
-    avatar: avatarSarah
-  },
-  {
-    id: 3,
-    name: "Marcus Tan",
-    location: "Workshop Owner, Subang Jaya",
-    text: "As a workshop owner, finding a reliable car battery wholesaler is crucial. Genus Malaysia supplies us with top-tier Genus and K-viron batteries on time. Their calcium-silver technology is highly requested by our clients for its incredible longevity!",
-    rating: 5,
-    avatar: avatarMarcus
   }
 ];
 
@@ -176,15 +139,8 @@ const steps = [
 ];
 
 export default function Home() {
-  const [activeSlide, setActiveSlide] = useState(0);
   const { t } = useLanguage();
-
-  const localizedTestimonials = testimonials.map((testimonial, index) => ({
-    ...testimonial,
-    name: t.home.testimonials[index][0],
-    location: t.home.testimonials[index][1],
-    text: t.home.testimonials[index][2],
-  }));
+  const featuredBrand = t.home.featuredBrand;
 
   const localizedServices = servicesList.map((service, index) => ({
     ...service,
@@ -204,12 +160,14 @@ export default function Home() {
     desc: t.home.gallery[index][1],
   }));
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
+  const featuredBrandFeatures = [
+    { title: featuredBrand.features.powerfulStarting, Icon: Zap },
+    { title: featuredBrand.features.maintenanceFree, Icon: CheckCircle2 },
+    { title: featuredBrand.features.calciumSilverTechnology, Icon: BatteryCharging },
+    { title: featuredBrand.features.highHeatResistance, Icon: ThermometerSun },
+    { title: featuredBrand.features.nationwideWarranty, Icon: ShieldCheck },
+    { title: featuredBrand.features.longerServiceLife, Icon: Gauge },
+  ];
 
   return (
     <PageTransition>
@@ -346,7 +304,7 @@ export default function Home() {
           </div>
           
           {/* Service Cards Grid */}
-          <div className="row g-4 stagger-group" id="servicesGrid">
+          <div className="row g-3 stagger-group" id="servicesGrid">
             {localizedServices.map((service) => (
               <div 
                 key={service.id} 
@@ -366,65 +324,75 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. TESTIMONIALS SECTION */}
-      <section id="testimonials" className="testimonials-section section-padding">
-        <div className="container">
-          {/* Header */}
-          <div className="section-title-container text-center animate-on-scroll fade-up" id="testimonialsTitleWrap">
-            <span className="section-subtitle" style={{ color: 'var(--color-accent, #FBBF24)' }}>{t.home.testimonialsSubtitle}</span>
-            <h2 className="section-title light" id="testimonialsHeader">{t.home.testimonialsTitle}</h2>
-            <p className="section-description mx-auto text-light opacity-75" id="testimonialsSubtext">
-              {t.home.testimonialsDesc}
-            </p>
+      {/* FEATURED BRAND SECTION */}
+      <section id="featured-brand" className="home-featured-brand-section section-padding" aria-labelledby="featuredBrandTitle">
+        <div className="home-featured-brand-bg" aria-hidden="true">
+          <img className="home-featured-brand-layer home-featured-brand-background" src="/assets/images/home/featured-brand/01-background.webp" alt="" loading="lazy" decoding="async" />
+          <img className="home-featured-brand-layer home-featured-brand-lightning-left" src="/assets/images/home/featured-brand/05-lightning-left.png" alt="" loading="lazy" decoding="async" />
+          <img className="home-featured-brand-layer home-featured-brand-lightning-right" src="/assets/images/home/featured-brand/06-lightning-right.png" alt="" loading="lazy" decoding="async" />
+          <img className="home-featured-brand-layer home-featured-brand-smoke" src="/assets/images/home/featured-brand/07-smoke.png" alt="" loading="lazy" decoding="async" />
+          <img className="home-featured-brand-layer home-featured-brand-particles" src="/assets/images/home/featured-brand/08-particles.png" alt="" loading="lazy" decoding="async" />
+          <img className="home-featured-brand-layer home-featured-brand-glow" src="/assets/images/home/featured-brand/09-glow.png" alt="" loading="lazy" decoding="async" />
+        </div>
+
+        <div className="container home-featured-brand-container">
+          <div className="home-featured-brand-header text-center animate-on-scroll fade-up" id="featuredBrandHeader">
+            <span className="section-subtitle">{featuredBrand.eyebrow}</span>
+            <h2 className="section-title light" id="featuredBrandTitle">{featuredBrand.title}</h2>
+            <p className="section-description mx-auto">{featuredBrand.subtitle}</p>
           </div>
-          
-          {/* Custom React Carousel Slider */}
-          <div className="testimonial-carousel-container animate-on-scroll fade-up stagger-1" id="testimonialCarouselWrap">
-            <div className="carousel slide">
-              {/* Carousel Indicators */}
-              <div className="carousel-indicators carousel-indicators-custom">
-                {localizedTestimonials.map((_, index) => (
-                  <button 
-                    key={index}
-                    type="button" 
-                    className={activeSlide === index ? 'active' : ''}
-                    onClick={() => setActiveSlide(index)}
-                    aria-label={`Slide ${index + 1}`}
-                  ></button>
-                ))}
-              </div>
-              
-              {/* Slides content */}
-              <div className="carousel-inner">
-                {localizedTestimonials.map((testimonial, index) => (
-                  <div 
-                    key={testimonial.id}
-                    className={`carousel-item ${activeSlide === index ? 'active d-block' : 'd-none'}`}
-                    style={{ transition: 'opacity 0.6s ease' }}
-                  >
-                    <div className="testimonial-card">
-                      <div className="testimonial-avatar-wrap">
-                        <img 
-                          src={testimonial.avatar} 
-                          alt={`${testimonial.name} portrait`} 
-                          className="testimonial-avatar" 
-                        />
-                      </div>
-                      <div className="testimonial-rating d-flex justify-content-center align-items-center gap-1">
-                        {Array.from({ length: testimonial.rating }).map((_, i) => (
-                          <Star key={i} size={16} fill="var(--color-accent, #FBBF24)" color="var(--color-accent, #FBBF24)" className="mx-0.5" />
-                        ))}
-                      </div>
-                      <p className="testimonial-text">"{testimonial.text}"</p>
-                      <div className="testimonial-author">
-                        <h4>{testimonial.name}</h4>
-                        <span>{testimonial.location}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+
+          <div className="home-featured-brand-showcase animate-on-scroll fade-up stagger-1" id="featuredBrandShowcase">
+            <div className="home-featured-brand-feature-list home-featured-brand-feature-list-left stagger-group">
+              {featuredBrandFeatures.slice(0, 3).map(({ title, Icon }) => (
+                <div className="home-featured-brand-feature animate-on-scroll fade-up" key={title}>
+                  <span className="home-featured-brand-feature-icon">
+                    <Icon size={22} aria-hidden="true" />
+                  </span>
+                  <span>{title}</span>
+                </div>
+              ))}
             </div>
+
+            <div className="home-featured-brand-stage" aria-label={featuredBrand.alt.battery}>
+              <img className="home-featured-brand-stage-layer home-featured-brand-ring" src="/assets/images/home/featured-brand/03-energy-ring.png" alt="" loading="lazy" decoding="async" />
+              <img className="home-featured-brand-stage-layer home-featured-brand-reflection" src="/assets/images/home/featured-brand/10-reflection.png" alt="" loading="lazy" decoding="async" />
+              <img className="home-featured-brand-stage-layer home-featured-brand-pedestal" src="/assets/images/home/featured-brand/04-pedestal.png" alt="" loading="lazy" decoding="async" />
+              <img className="home-featured-brand-battery" src="/assets/images/home/featured-brand/02-battery.png" alt={featuredBrand.alt.battery} loading="lazy" decoding="async" />
+            </div>
+
+            <div className="home-featured-brand-feature-list home-featured-brand-feature-list-right stagger-group">
+              {featuredBrandFeatures.slice(3).map(({ title, Icon }) => (
+                <div className="home-featured-brand-feature animate-on-scroll fade-up" key={title}>
+                  <span className="home-featured-brand-feature-icon">
+                    <Icon size={22} aria-hidden="true" />
+                  </span>
+                  <span>{title}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="home-featured-brand-feature-grid stagger-group" aria-label={featuredBrand.labels.features}>
+            {featuredBrandFeatures.map(({ title, Icon }) => (
+              <div className="home-featured-brand-feature animate-on-scroll fade-up" key={title}>
+                <span className="home-featured-brand-feature-icon">
+                  <Icon size={22} aria-hidden="true" />
+                </span>
+                <span>{title}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="home-featured-brand-actions animate-on-scroll fade-up">
+            <Link to="/brands" className="btn btn-premium-accent btn-ripple">
+              <BatteryCharging size={18} aria-hidden="true" />
+              <span>{featuredBrand.actions.explore}</span>
+            </Link>
+            <Link to="/contact" className="btn btn-premium-outline btn-ripple">
+              <MessageCircle size={18} aria-hidden="true" />
+              <span>{featuredBrand.actions.contact}</span>
+            </Link>
           </div>
         </div>
       </section>
