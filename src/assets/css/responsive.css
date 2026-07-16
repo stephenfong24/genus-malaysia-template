@@ -65,6 +65,10 @@
         left: 0;
         transform-origin: top left;
     }
+
+    #headerBtnMaintenance {
+        margin-left: 1.25rem;
+    }
     
     .navbar-cta {
         margin-top: 1rem;
