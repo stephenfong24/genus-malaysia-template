@@ -8,6 +8,9 @@ import './assets/css/style.css';
 import './assets/css/responsive.css';
 import './index.css';
 
+document.body.classList.add('theme-navy');
+localStorage.setItem('genus-app-theme', 'Navy');
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />

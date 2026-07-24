@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
-import ThemeSwitcher from './components/ThemeSwitcher';
 import SEO from './components/SEO';
 import ScrollAnimationController from './components/ScrollAnimationController';
 import RouteScrollReset from './components/RouteScrollReset';
@@ -43,7 +42,6 @@ export default function App() {
           {/* Floating Sticky Utilities */}
           <FloatingWhatsApp />
           <ScrollToTop />
-          <ThemeSwitcher />
         </div>
       </Router>
     </LanguageProvider>
